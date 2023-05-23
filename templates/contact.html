@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+
+<div class="contact-section-layout-1 section-padding-2">
+    <div class="container">
+        <div class="row gutter-30 justify-content-between align-items-center">
+            <div class="col-xl-6 col-lg-6">
+                <div class="contact-wrap-area-1">
+
+                    <div class="rt-section-heading-style-2">
+                        <span class="sub-title">How may we help you?</span>
+                        <h2 class="heading-tilte">
+                            Contact Information
+                        </h2>
+                        <p>
+                            Mhen an unknown printer took a galley of type and scrambled it to make a type
+                            specimen book. It has survived not only five centuries, but also the leap into
+                            remaining essentially unchanged.
+                        </p>
+                    </div>
+
+                    <div class="contact-list-area-1 ">
+                        <ul class="contact-list-style-1 clearfix">
+                            <li class="list-item media">
+                                <div class="list-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="list-content">
+                                    <span>12 University Market road, Nsukka</span>
+                                </div>
+                            </li>
+                            <li class="list-item media">
+                                <div class="list-icon">
+
+                                    <i class="far fa-envelope"></i>
+                                </div>
+                                <div class="list-content">
+                                    <span>
+                                        <a href="mailto:infonouka@gmail.com">infowebsite@gmail.com</a>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="list-item media">
+                                <div class="list-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="list-content">
+                                    <span><a href="tel:+1238895600">+123 123 456 789</a></span>
+                                </div>
+                            </li>
+                            <li class="list-item media">
+                                <div class="list-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="list-content">
+                                    <span>
+                                        <a href="#" rel="nofollow">www.nationaltrustng.com</a>
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end col -->
+
+            <div class="col-xl-5 col-lg-6">
+                <form action="" class="contact-form-style-1 rt-contact-form">
+                    <h4 class="form-title">Leave a Message</h4>
+                    <div class="form-group">
+                        <input type="text" class="form-control rt-form-control" placeholder="Name *" name="name"
+                            id="name" data-error="Name field is required" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control rt-form-control" placeholder="E-mail *" name="email"
+                            id="email" data-error="Email field is required" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control rt-form-control" placeholder="Phone *" name="phone"
+                            id="phone" data-error="Phone number is required" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="message" id="message" class="form-control rt-form-control rt-textarea"
+                            placeholder="Message *" data-error="Message field is required" required></textarea>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Now</button>
+                    <div class="form-response"></div>
+                </form>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+
+{% endblock %}
