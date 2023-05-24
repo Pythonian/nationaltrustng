@@ -26,38 +26,17 @@
 
 <body>
 
-    <!-- Start wrapper -->
     <div id="wrapper" class="wrapper">
-
-        <!-- Start main-content -->
-        <div id="main_content" class="footer-fixed">
-
-            <!-- Header -->
-            <header class="rt-header rt-header-style-9 sticky-on">
-
-                <!-- sticky-placeholder -->
-                <div id="sticky-placeholder"></div>
-
-                {% include 'partials/_topbar.html' %}
-
-                {% include 'partials/_middlebar.html' %}
-
+        <div id="main_content">
+            <header class="rt-header">
                 {% include 'partials/_navbar.html' %}
-
             </header>
-            <!-- end header -->
-
             {% include 'partials/_mobilenav.html' %}
-
-            <!-- Start Main -->
             <main>
                 {% block content %} {% endblock content %}
             </main>
-
             {% include 'partials/_footer.html' %}
-
         </div>
-        <!-- End main-content -->
 
         <!-- start back to top -->
         <a href="javascript:void(0)" id="back-to-top">
@@ -66,8 +45,6 @@
         <!-- End back to top -->
 
     </div>
-    <!-- End wrapper -->
-
 
     <!-- Dependency Scripts -->
     <script src="{% static 'js/jquery.min.js' %}"></script>

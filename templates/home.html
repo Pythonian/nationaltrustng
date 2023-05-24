@@ -6,229 +6,151 @@
 
 {% block content %} 
 
-<section class="featured-post-style-5 section-padding">
+<section class="py-5">
     <div class="container">
-        <div class="row gutter-30">
-
+        <div class="row gy-4">
             <div class="col-xl-3 col-lg-6 order-2 order-xl-1">
-                <div class="rt-slidebar left-slidebar">
-                    <div class="sidebar-wrap mb--40">
-                        <div class="top-headline-box-style-1">
-                            <h2 class="title">Politics</h2>
-                            <div class="news-list-style-1">
-                                {% include 'partials/_news_list_style-1.html' %}
-                                {% include 'partials/_news_list_style-1.html' %}
-                                {% include 'partials/_news_list_style-1.html' %}
-                            </div>
-                        </div>
-                    </div>
+                <div class="top-headline-box-style-1">
+                    <h2 class="title">Politics</h2>
+                    {% include 'partials/_politics.html' %}
+                    {% include 'partials/_politics.html' %}
+                    {% include 'partials/_politics.html' %}
                 </div>
             </div>
-
             <div class="col-xl-6 col-lg-12 order-1 order-xl-2">
-                {% include 'partials/_featured-middle-post-style-5.html' %}
+                {% include 'partials/_latest_story.html' %}
             </div>
-
             <div class="col-xl-3 col-lg-6 order-2 order-xl-3">
-                <div class="rt-sidebar right-siderbar">
-                    <div class="sidebar-wrap">
-                        <div class="row gutter-15">
-                            {% include 'partials/_hero_right_sidebar_news.html' %}
-                            {% include 'partials/_hero_right_sidebar_news.html' %}
-                            {% include 'partials/_hero_right_sidebar_news.html' %}
-                            {% include 'partials/_hero_right_sidebar_news.html' %}
-                        </div>
-                    </div>
+                <div class="top-headline-box-style-1">
+                    <h2 class="title">News</h2>
+                    {% include 'partials/_news.html' %}
+                    {% include 'partials/_news.html' %}
+                    {% include 'partials/_news.html' %}
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<div class="ft-section ft-section-style-1">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                {% include 'partials/_ad_850_x_90.html' %}
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            {% include 'partials/_ad_850_x_90.html' %}
         </div>
     </div>
 </div>
 
-<section class="ft-section-style-2 section-padding">
+<section class="py-5">
     <div class="container">
-        <div class="row gutter-30">
-
+        <div class="row gy-4">
             <div class="col-xl-9">
-                <div class="featured-area-style-1">
-
-                    <div class="wrap">
-
-                        <div class="row">
-                            <div class="col-12">
-                                <h2 class="rt-section-heading">
-                                    <span class="rt-section-text">Latest News</span>
-                                    <span class="rt-section-dot"></span>
-                                    <span class="rt-section-line"></span>
-                                </h2>
-                            </div>
+                <div class="me-lg-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="rt-section-heading">
+                                <span class="rt-section-text">Features</span>
+                                <span class="rt-section-dot"></span>
+                                <span class="rt-section-line"></span>
+                            </h2>
                         </div>
+                    </div>
 
-                        <div class="row g-4">
-                            <div class="col-12">
-                                {% include 'partials/_post_list_style-4.html' %}
-                            </div>
-                            <div class="col-12">
-                                {% include 'partials/_post_list_style-4.html' %}
-                            </div>
-                            <div class="col-12">
-                                {% include 'partials/_post_list_style-4.html' %}
-                            </div>
-                            <div class="col-12">
-                                {% include 'partials/_post_list_style-4.html' %}
-                            </div>
-                            <div class="col-12">
-                                {% include 'partials/_post_list_style-4.html' %}
-                            </div>
-                            <div class="col-12">
-                                {% include 'partials/_post_list_style-4.html' %}
-                            </div>
-
+                    <div class="row g-4">
+                        <div class="col-12">
+                            {% include 'partials/_features.html' %}
+                        </div>
+                        <div class="col-12">
+                            {% include 'partials/_features.html' %}
+                        </div>
+                        <div class="col-12">
+                            {% include 'partials/_features.html' %}
+                        </div>
+                        <div class="col-12">
+                            {% include 'partials/_features.html' %}
+                        </div>
+                        <div class="col-12">
+                            {% include 'partials/_features.html' %}
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-xl-3 col-md-8 mx-auto">
-                <div class="rt-sidebar ">
+                <div class="mb-5">
+                    <h2 class="rt-section-heading style-2 mb-3">
+                        <span class="rt-section-text">Follow Us </span>
+                        <span class="rt-section-dot"></span>
+                        <span class="rt-section-line"></span>
+                    </h2>
+                    {% include 'partials/_followus_sidebar.html' %}
+                </div>
 
-                    <div class="sidebar-wrap mb-5">
-                        <h2 class="rt-section-heading style-2 mb-3">
-                            <span class="rt-section-text">Follow Us </span>
-                            <span class="rt-section-dot"></span>
-                            <span class="rt-section-line"></span>
-                        </h2>
-                        {% include 'partials/_followus_sidebar.html' %}
-                    </div>
-
-                    <div class="sidebar-wrap mb-5">
-                        <h2 class="rt-section-heading style-2 mb-3">
-                            <span class="rt-section-text">Popular News </span>
-                            <span class="rt-section-dot"></span>
-                            <span class="rt-section-line"></span>
-                        </h2>
-                        <div class="row rt-gutter-10">
-                            <div class="col-12">
-                                {% include 'partials/_post_grid_md.html' %}
-                            </div>
-                            <div class="col-12">
-                                {% include 'partials/_post_grid_md.html' %}
-                            </div>
-                            <div class="col-12">
-                                {% include 'partials/_post_grid_md.html' %}
-                            </div>
+                <div class="mb-5">
+                    <h2 class="rt-section-heading style-2 mb-3">
+                        <span class="rt-section-text">Opinions</span>
+                        <span class="rt-section-dot"></span>
+                        <span class="rt-section-line"></span>
+                    </h2>
+                    <div class="row">
+                        <div class="col-12">
+                            {% include 'partials/_opinion.html' %}
                         </div>
-                    </div>
-
-                    <div class="sidebar-wrap mb--40">
-                        {% include 'partials/_ad_310_x_425.html' %}
-                    </div>
-
-                    <div class="sidebar-wrap">
-                        <h2 class="rt-section-heading style-2 mb--30">
-                            <span class="rt-section-text">Opinion</span>
-                            <span class="rt-section-dot"></span>
-                            <span class="rt-section-line"></span>
-                        </h2>
-                        {% include 'partials/_recent_news.html' %}
+                        <div class="col-12">
+                            {% include 'partials/_opinion.html' %}
+                        </div>
+                        <div class="col-12">
+                            {% include 'partials/_opinion.html' %}
+                        </div>
+                        <div class="col-12">
+                            {% include 'partials/_opinion.html' %}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="ft-section-style-2 section-padding">
-    <div class="container">
-        <div class="row gutter-30">
-
-            <div class="col-xl-9">
-                <div class="featured-area-style-1 overflow-hidden">
-
-                    <div class="wrap mb--60">
-
-                        <div class="row">
-                            <div class="col-12">
-                                <h2 class="rt-section-heading">
-                                    <span class="rt-section-text">Editorial</span>
-                                    <span class="rt-section-dot"></span>
-                                    <span class="rt-section-line"></span>
-                                </h2>
+                <div class="sidebar-wrap">
+                    <h2 class="rt-section-heading style-2 mb--30">
+                        <span class="rt-section-text">Sports</span>
+                        <span class="rt-section-dot"></span>
+                        <span class="rt-section-line"></span>
+                    </h2>
+                    <div class="featured-news-box-style-1">
+                        <a href="#">
+                            <img src="https://placehold.it/612x488" alt="recent-post_11" width="612" height="488">
+                        </a>
+                        <div class="inner">
+                            <div class="feature-content">
+                                <a href="" class="sports">Sports</a>
+                                <ul class="featured-list">
+                                    <li>
+                                        <h4 class="post-title">
+                                            <a href="/post/">
+                                                Magical fisher basical
+                                                power to conjure
+                                            </a>
+                                        </h4>
+                                        <div class="post-meta mb-3">
+                                            <ul>
+                                                <li>
+                                                    <span class="rt-meta">
+                                                        By <a href="" class="name">Admin</a>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="rt-meta">
+                                                        <i class="far fa-calendar-alt icon"></i>
+                                                        DECEMBER 9, 2022
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="mb-0">
+                                            Ahen unknown printer took galy
+                                            type and scramble.Ahen unknown
+                                            printer took galy type.
+                                        </p>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-
-                        <div class="row g-4">
-
-                            <div class="col-md-6">
-                                {% include 'partials/_post_md.html' %}
-                            </div>
-                            <div class="col-md-6">
-                                {% include 'partials/_post_md.html' %}
-                            </div>
-                            <div class="col-md-6">
-                                {% include 'partials/_post_md.html' %}
-                            </div>
-                            <div class="col-md-6">
-                                {% include 'partials/_post_md.html' %}
-                            </div>
-                            <div class="col-md-6">
-                                {% include 'partials/_post_md.html' %}
-                            </div>
-                            <div class="col-md-6">
-                                {% include 'partials/_post_md.html' %}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="wrap">
-                        {% include 'partials/_ad_960_x_150.html' %}
-                    </div>
-
-                </div>
-                <!-- end featured-area-style-1 -->
-            </div>
-            <!-- end col -->
-
-            <div class="col-xl-3 col-md-8 mx-auto">
-                <div class="rt-sidebar">
-
-                    <div class="sidebar-wrap mb--40">
-                        <h2 class="rt-section-heading style-2 mb--30">
-                            <span class="rt-section-text">Top Categories </span>
-                            <span class="rt-section-dot"></span>
-                            <span class="rt-section-line"></span>
-                        </h2>
-                        <ul class="rt-categories">
-                            {% include 'partials/_top_categories.html' %}
-                        </ul>
-                    </div>
-
-                    <div class="sidebar-wrap">
-                        <h2 class="rt-section-heading style-2 mb--30">
-                            <span class="rt-section-text">Tags </span>
-                            <span class="rt-section-dot"></span>
-                            <span class="rt-section-line"></span>
-                        </h2>
-                        <div class="tag-list">
-                            <a href="#" class="tag-link">Lagos</a>
-                            <a href="#" class="tag-link">Buhari</a>
-                            <a href="#" class="tag-link">Fire</a>
-                            <a href="#" class="tag-link">Petitions</a>
-                            <a href="#" class="tag-link">Creative</a>
-                            <a href="#" class="tag-link">politics</a>
-                            <a href="#" class="tag-link">business</a>
-                            <a href="#" class="tag-link">entertainment</a>
-                            <a href="#" class="tag-link">social</a>
                         </div>
                     </div>
                 </div>
@@ -237,73 +159,57 @@
     </div>
 </section>
 
-<section class="ft-section-style-2 section-padding">
+<section class="py-5">
     <div class="container">
-        <div class="row gutter-30">
-
+        <div class="row gy-4">
             <div class="col-xl-9">
-                <div class="featured-area-style-1 overflow-hidden">
+                <div class="mb-5 me-lg-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="rt-section-heading">
+                                <span class="rt-section-text">Personality</span>
+                                <span class="rt-section-dot"></span>
+                                <span class="rt-section-line"></span>
+                            </h2>
+                        </div>
+                    </div>
 
-                    <div class="wrap">
-
-                        <h2 class="rt-section-heading">
-                            <span class="rt-section-text">Features</span>
-                            <span class="rt-section-dot"></span>
-                            <span class="rt-section-line"></span>
-                        </h2>
-
-                        <div class="row gutter-24 justify-content-center">
-
-                            <div class="col-xl-4 col-md-6">
-                                <div class="rt-post-grid-xl grid-meta b--r">
-                                    {% include 'partials/_cat_features_image.html' %} 
-                                    <ul class="cat-list">
-                                        {% include 'partials/_cat_list_post.html' %}
-                                        {% include 'partials/_cat_list_post.html' %}
-                                        {% include 'partials/_cat_list_post.html' %}
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-4 col-md-6">
-                                <div class="rt-post-grid-xl grid-meta b--r">
-                                    {% include 'partials/_cat_features_image.html' %}
-                                    <ul class="cat-list">
-                                        {% include 'partials/_cat_list_post.html' %}
-                                        {% include 'partials/_cat_list_post.html' %}
-                                        {% include 'partials/_cat_list_post.html' %}
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-4 col-md-6">
-
-                                <div class="rt-post-grid-xl grid-meta">
-                                    {% include 'partials/_cat_features_image.html' %}
-                                    <ul class="cat-list">
-                                        {% include 'partials/_cat_list_post.html' %}
-                                        {% include 'partials/_cat_list_post.html' %}
-                                        {% include 'partials/_cat_list_post.html' %}
-                                    </ul>
-                                </div>
-                            </div>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            {% include 'partials/_personality.html' %}
+                        </div>
+                        <div class="col-md-6">
+                            {% include 'partials/_personality.html' %}
+                        </div>
+                        <div class="col-md-6">
+                            {% include 'partials/_personality.html' %}
+                        </div>
+                        <div class="col-md-6">
+                            {% include 'partials/_personality.html' %}
+                        </div>
+                        <div class="col-md-6">
+                            {% include 'partials/_personality.html' %}
+                        </div>
+                        <div class="col-md-6">
+                            {% include 'partials/_personality.html' %}
                         </div>
                     </div>
                 </div>
+                {% include 'partials/_ad_960_x_150.html' %}
             </div>
 
             <div class="col-xl-3 col-md-8 mx-auto">
                 <div class="rt-sidebar">
 
-                    <div class="sidebar-wrap ">
+                    <div class="sidebar-wrap">
                         <h2 class="rt-section-heading style-2 mb-3">
-                            <span class="rt-section-text">Interviews </span>
+                            <span class="rt-section-text">Interview</span>
                             <span class="rt-section-dot"></span>
                             <span class="rt-section-line"></span>
                         </h2>
                         <div class="video-box-style-1 video-box">
                             {% include 'partials/_video_featured.html' %}
-
+                    
                             <div class="video-content">
                                 <ul class="video-item-list">
                                     {% include 'partials/_video_item_list.html' %}
@@ -320,21 +226,95 @@
     </div>
 </section>
 
-<section class="ft-section ft-section-style-3 section-padding">
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-xl-12">
+                <div class="me-lg-1 mb-5">
+                    <div class="row g-4">
+                        <div class="col-lg-3">
+                            <h2 class="rt-section-heading">
+                                <span class="rt-section-text">Economy</span>
+                                <span class="rt-section-dot"></span>
+                                <span class="rt-section-line"></span>
+                            </h2>
+                            <div class="d-grid gap-3">
+                                <div class="rt-post-list-style-4 grid-meta">
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <h2 class="rt-section-heading">
+                                <span class="rt-section-text">Entertainment</span>
+                                <span class="rt-section-dot"></span>
+                                <span class="rt-section-line"></span>
+                            </h2>
+                            <div class="rt-post-with-listing-style-4">
+                                <div class="rt-post-list-style-4 grid-meta">
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <h2 class="rt-section-heading">
+                                <span class="rt-section-text">Security</span>
+                                <span class="rt-section-dot"></span>
+                                <span class="rt-section-line"></span>
+                            </h2>
+                            <div class="rt-post-with-listing-style-4">
+                                <div class="rt-post-list-style-4 grid-meta">
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <h2 class="rt-section-heading">
+                                <span class="rt-section-text">Columnists</span>
+                                <span class="rt-section-dot"></span>
+                                <span class="rt-section-line"></span>
+                            </h2>
+                            <div class="rt-post-with-listing-style-4">
+                                <div class="rt-post-list-style-4 grid-meta">
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                    {% include 'partials/_category_news_grid_md.html' %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <h2 class="rt-section-heading">
-                    <span class="rt-section-text">Columnists</span>
+                    <span class="rt-section-text">Africa</span>
                     <span class="rt-section-dot"></span>
                     <span class="rt-section-line"></span>
                 </h2>
             </div>
         </div>
-        <!-- end row -->
 
         <div class="row gy-3">
-
             <div class="col-xl-3 col-md-6">
                 {% include 'partials/_post_grid_columnist.html' %}
             </div>
@@ -360,215 +340,47 @@
                 {% include 'partials/_post_grid_columnist.html' %}
             </div>
         </div>
-        <!-- end row -->
-
     </div>
-    <!-- end container -->
 </section>
-<!-- end ft-section-style-3 -->
 
-<!-- start popular post  -->
-<section class="section-padding bg--gray">
+<section class="py-5">
     <div class="container">
-        <div class="row gutter-30">
-
-            <div class="col-xl-9">
-                <div class="featured-area-style-5">
-                    <div class="wrap">
-                        <h2 class="rt-section-heading mb--30">
-                            <span class="rt-section-text">World News </span>
-                            <span class="rt-section-dot"></span>
-                            <span class="rt-section-line"></span>
-                        </h2>
-                        {% include 'partials/_post_grid_leftimg.html' %}
-                        <div class="row gutter-24 news-list-style-2">
-
-                            <div class="col-xl-3 col-md-6">
-                                {% include 'partials/_post_grid_sm.html' %}
-                            </div>
-                            <!-- end col -->
-
-                            <div class="col-xl-3 col-md-6">
-                                {% include 'partials/_post_grid_sm.html' %}
-                            </div>
-                            <!-- end col -->
-
-                            <div class="col-xl-3 col-md-6">
-                                {% include 'partials/_post_grid_sm.html' %}
-                            </div>
-                            <!-- end col -->
-
-                            <div class="col-xl-3 col-md-6">
-                                {% include 'partials/_post_grid_sm.html' %}
-                            </div>
-                            <!-- end col -->
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end col -->
-
-            <div class="col-xl-3 col-lg-8 mx-auto">
-                <div class="rt-sidebar">
-                    <div class="sidebar-wrap ">
-                        <h2 class="rt-section-heading style-2 mb--30">
-                            <span class="rt-section-text">Africa </span>
-                            <span class="rt-section-dot"></span>
-                            <span class="rt-section-line"></span>
-                        </h2>
-                        <div class="sidebar-post-style-5 grid-meta">
-                            <div class="item-img">
-                                <a href="#">
-                                    <img src="https://placehold.it/696x491" alt="post" width="696" height="491">
-                                </a>
-                            </div>
-                            <div class="item-content">
-                                <h3 class="post-title">
-                                    <a href="#">
-                                        After Moon They arand Styst
-                                        CloseSpace Really
-                                    </a>
-                                </h3>
-                                <div class="post-meta">
-                                    <ul>
-                                        <li>
-                                            <span class="rt-meta">
-                                                by <a href="#" class="name">Seyi Pythonian</a>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span class="rt-meta">
-                                                <i class="far fa-calendar-alt icon"></i>
-                                                DECEMBER 9, 2022
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <p>
-                                    Proactively envisione deaf multiedia bassey
-                                    rtise and cross-media ...
-                                </p>
-
-                                <div class="item-title-list">
-                                    <div class="single-item">
-                                        <h4 class="post-title">
-                                            <a href="#">
-                                                Change Your Strategyndmmm
-                                                Sma Gomer Smart.
-                                            </a>
-                                        </h4>
-                                        <span class="rt-meta">
-                                            <i class="far fa-calendar-alt icon"></i>
-                                            DECEMBER 9, 2022
-                                        </span>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- end slidebar wrap  -->
-                </div>
-            </div>
-            <!-- end col -->
-
-        </div>
-        <!-- end row -->
-    </div>
-    <!-- end container -->
-</section>
-<!-- start popular post  -->
-
-<section class="ft-section-style-4 section-padding">
-    <div class="container">
-
-        <div class="row g-4">
+        <div class="row gy-4">
             <div class="col-xl-12">
-                <div class="featured-area-style-1">
-
-                    <div class="wrap mb--60">
-
-                        <div class="row g-4">
-
-                            <div class="col-lg-3">
-                                <h2 class="rt-section-heading">
-                                    <span class="rt-section-text">Security</span>
-                                    <span class="rt-section-dot"></span>
-                                    <span class="rt-section-line"></span>
-                                </h2>
-                                <div class="rt-post-with-listing-style-4">
-                                    <div class="rt-post-list-style-4 grid-meta">
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                    </div>
-                                </div>
-                                <!-- end rt-post-with-listing-style-1 -->
-                            </div>
-                            <!-- end inner col -->
-
-                            <div class="col-lg-3">
-                                <h2 class="rt-section-heading">
-                                    <span class="rt-section-text">Economy</span>
-                                    <span class="rt-section-dot"></span>
-                                    <span class="rt-section-line"></span>
-                                </h2>
-                                <div class="rt-post-with-listing-style-4">
-                                    <div class="rt-post-list-style-4 grid-meta">
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                    </div>
-                                </div>
-                                <!-- end rt-post-with-listing-style-1 -->
-                            </div>
-                            <!-- end inner col -->
-
-                            <div class="col-lg-3">
-                                <h2 class="rt-section-heading">
-                                    <span class="rt-section-text">Sports</span>
-                                    <span class="rt-section-dot"></span>
-                                    <span class="rt-section-line"></span>
-                                </h2>
-                                <div class="rt-post-with-listing-style-4">
-                                    <div class="rt-post-list-style-4 grid-meta">
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                    </div>
-                                </div>
-                                <!-- end rt-post-with-listing-style-1 -->
-                            </div>
-                            <!-- end inner col -->
-
-                            <div class="col-lg-3">
-                                <h2 class="rt-section-heading">
-                                    <span class="rt-section-text">Entertainment</span>
-                                    <span class="rt-section-dot"></span>
-                                    <span class="rt-section-line"></span>
-                                </h2>
-                                <div class="rt-post-with-listing-style-4">
-                                    <div class="rt-post-list-style-4 grid-meta">
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                        {% include 'partials/_category_news_grid_md.html' %}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <h2 class="rt-section-heading mb-3">
+                    <span class="rt-section-text">World </span>
+                    <span class="rt-section-dot"></span>
+                    <span class="rt-section-line"></span>
+                </h2>
+                <div class="row gy-3 news-list-style-2">
+                    <div class="col-xl-3 col-md-6">
+                        {% include 'partials/_world_news.html' %}
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        {% include 'partials/_world_news.html' %}
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        {% include 'partials/_world_news.html' %}
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        {% include 'partials/_world_news.html' %}
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        {% include 'partials/_world_news.html' %}
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        {% include 'partials/_world_news.html' %}
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        {% include 'partials/_world_news.html' %}
+                    </div>
+                    <div class="col-xl-3 col-md-6">
+                        {% include 'partials/_world_news.html' %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 
 {% endblock content %}
