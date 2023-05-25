@@ -1,28 +1,26 @@
 <div class="rt-post-grid grid-meta">
     <div class="post-img">
-        <a href="/post/">
-            <img src="https://placehold.it/551x430" alt="post" width="551" height="430">
+        <a href="{{ post.get_absolute_url }}">
+            <img src="{{ post.image.url }}" alt="{{ post.image_caption }}" width="551" height="430">
         </a>
-        <a href="#" class="ft-fit rt-meta-over">Africa</a>
     </div>
     <div class="post-content">
         <h3 class="post-title">
-            <a href="/post/">
-                Magical fisher basical navik
-                power to conjure
+            <a href="{{ post.get_absolute_url }}">
+                {{ post.title }}
             </a>
         </h3>
         <div class="post-meta">
             <ul>
                 <li>
                     <span class="rt-meta">
-                        By <a href="#" class="name">Admin</a>
+                        By <a href="#" class="name">{{ post.author }}</a>
                     </span>
                 </li>
                 <li>
                     <span class="rt-meta">
                         <i class="far fa-calendar-alt icon"></i>
-                        DECEMBER 9, 2022
+                        {{ post.created|date:"F j, Y" }}
                     </span>
                 </li>
             </ul>

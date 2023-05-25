@@ -1,0 +1,279 @@
+{% extends "base.html" %} 
+
+{% block title %}{{ category.title }} | Category{% endblock %}
+
+{% block content %} 
+
+<div class="banner inner-banner">
+    <div class="container">
+        <nav class="rt-breadcrumb-wrap" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <span class="rt-text-truncate">
+                        {{ category.title }}
+                    </span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<section class="rt-sidebar-section-layout-1">
+    <div class="container">
+        <div class="row gutter-40 sticky-coloum-wrap">
+            <div class="col-xl-9 sticky-coloum-item">
+                <div class="rt-left-sidebar-sapcer-5">
+
+                    <div class="post-list-style-4">
+                        {% for post in posts %}
+                        {% include 'partials/_post_list_1.html' %}
+                        {% endfor %}
+                    </div>
+
+                    {% include 'partials/_pagination.html' with page_obj=posts %}
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-8 mx-auto sticky-coloum-item">
+                <div class="rt-sidebar sticky-wrap">
+
+                    <div class="sidebar-wrap mb--40">
+                        <div class="search-box">
+                            <form action="technology.html#" class="form search-form-box">
+                                <div class="form-group">
+                                    <input type="text" name="sarch" id="search" placeholder="Search..."
+                                        class="form-control rt-search-control">
+                                    <button type="submit" class="search-submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- end sidebar wrap -->
+
+                    <div class="sidebar-wrap mb--40">
+                        <h2 class="rt-section-heading style-2 mb--30">
+                            <span class="rt-section-text">Popular News </span>
+                            <span class="rt-section-dot"></span>
+                            <span class="rt-section-line"></span>
+                        </h2>
+                        <div class="row rt-gutter-10">
+
+                            <div class="col-6">
+                                <div class="rt-post-grid post-grid-md grid-meta">
+                                    <div class="post-img">
+                                        <a href="single-post1.html">
+                                            <img src="media/gallery/post-grid-md_1.jpg" alt="post" width="343"
+                                                height="250">
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="life-style.html" class="rt-post-cat-normal">Fashion</a>
+                                        <h4 class="post-title">
+                                            <a href="single-post1.html">
+                                                Beste ampute
+                                                Speak Market
+                                            </a>
+                                        </h4>
+                                        <span class="rt-meta">
+                                            <i class="far fa-calendar-alt icon"></i>
+                                            DECEMBER 9, 2022
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- col-6 -->
+
+                            <div class="col-6">
+                                <div class="rt-post-grid post-grid-md grid-meta">
+                                    <div class="post-img">
+                                        <a href="single-post1.html">
+                                            <img src="media/gallery/post-grid-md_2.jpg" alt="post" width="343"
+                                                height="250">
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="gaming.html" class="rt-post-cat-normal">Music</a>
+                                        <h4 class="post-title">
+                                            <a href="single-post1.html">
+                                                Beste ampute arey
+                                                Market
+                                            </a>
+                                        </h4>
+                                        <span class="rt-meta">
+                                            <i class="far fa-calendar-alt icon"></i>
+                                            DECEMBER 9, 2022
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- col-6 -->
+
+                            <div class="col-6">
+                                <div class="rt-post-grid post-grid-md grid-meta">
+                                    <div class="post-img">
+                                        <a href="single-post1.html">
+                                            <img src="media/gallery/post-grid-md_3.jpg" alt="post" width="343"
+                                                height="250">
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="life-style.html" class="rt-post-cat-normal">Fashion</a>
+                                        <h4 class="post-title">
+                                            <a href="single-post1.html">
+                                                Beste ampute
+                                                Speak Market
+                                            </a>
+                                        </h4>
+                                        <span class="rt-meta">
+                                            <i class="far fa-calendar-alt icon"></i>
+                                            DECEMBER 9, 2022
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- col-6 -->
+
+                            <div class="col-6">
+                                <div class="rt-post-grid post-grid-md grid-meta">
+                                    <div class="post-img">
+                                        <a href="single-post1.html">
+                                            <img src="media/gallery/post-grid-md_4.jpg" alt="post" width="343"
+                                                height="250">
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="gaming.html" class="rt-post-cat-normal">Music</a>
+                                        <h4 class="post-title">
+                                            <a href="single-post1.html">
+                                                Beste ampute arey
+                                                Market
+                                            </a>
+                                        </h4>
+                                        <span class="rt-meta">
+                                            <i class="far fa-calendar-alt icon"></i>
+                                            DECEMBER 9, 2022
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- col-6 -->
+
+                            <div class="col-6">
+                                <div class="rt-post-grid post-grid-md grid-meta">
+                                    <div class="post-img">
+                                        <a href="single-post1.html">
+                                            <img src="media/gallery/post-grid-md_5.jpg" alt="post" width="343"
+                                                height="250">
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="life-style.html" class="rt-post-cat-normal">Fashion</a>
+                                        <h4 class="post-title">
+                                            <a href="single-post1.html">
+                                                Beste ampute
+                                                Speak Market
+                                            </a>
+                                        </h4>
+                                        <span class="rt-meta">
+                                            <i class="far fa-calendar-alt icon"></i>
+                                            DECEMBER 9, 2022
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- col-6 -->
+
+                            <div class="col-6">
+                                <div class="rt-post-grid post-grid-md grid-meta">
+                                    <div class="post-img">
+                                        <a href="single-post1.html">
+                                            <img src="media/gallery/post-grid-md_6.jpg" alt="post" width="343"
+                                                height="250">
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <a href="gaming.html" class="rt-post-cat-normal">Music</a>
+                                        <h4 class="post-title">
+                                            <a href="single-post1.html">
+                                                Beste ampute arey
+                                                Market
+                                            </a>
+                                        </h4>
+                                        <span class="rt-meta">
+                                            <i class="far fa-calendar-alt icon"></i>
+                                            DECEMBER 9, 2022
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- col-6 -->
+
+                        </div>
+                        <!-- end row -->
+
+                    </div>
+                    <!-- end slidebar wrap  -->
+
+                    <div class="sidebar-wrap mb--40">
+                        <div class="ad-banner-img">
+                            <a href="technology.html#">
+                                <img src="media/gallery/ad-post_5.jpg" alt="ad-banner" width="301" height="270">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end slidebar wrap  -->
+
+                    <div class="sidebar-wrap mb--40">
+                        <h2 class="rt-section-heading style-2 mb--30">
+                            <span class="rt-section-text">Hot Categories </span>
+                            <span class="rt-section-dot"></span>
+                            <span class="rt-section-line"></span>
+                        </h2>
+                        <ul class="rt-categories">
+                            <li>
+                                <a href="gaming.html" data-bg-image="media/gallery/cat_1.jpg">
+                                    <span class="cat-name">Sports</span>
+                                    <span class="count">59</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="life-style.html" data-bg-image="media/gallery/cat_2.jpg">
+                                    <span class="cat-name">World</span>
+                                    <span class="count">12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="technology.html" data-bg-image="media/gallery/cat_3.jpg">
+                                    <span class="cat-name">Technology</span>
+                                    <span class="count">59</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="life-style.html" data-bg-image="media/gallery/cat_4.jpg">
+                                    <span class="cat-name">Food</span>
+                                    <span class="count">12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="life-style.html" data-bg-image="media/gallery/cat_5.jpg">
+                                    <span class="cat-name">Travel</span>
+                                    <span class="count">12</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %} 

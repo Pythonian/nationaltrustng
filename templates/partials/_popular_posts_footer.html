@@ -1,0 +1,15 @@
+<div class="item mb-3">
+    <div class="rt-post post-sm white-style">
+        <div class="post-content">
+            <h4 class="post-title ">
+                <a href="{{ post.get_absolute_url }}">
+                    {{ post.title }}
+                </a>
+            </h4>
+            <span class="rt-meta">
+                <i class="far fa-calendar-alt icon"></i>
+                {{ post.created|date:"F j, Y" }}
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,3 +1,32 @@
+<style>
+    .nav-scroller {
+    position:relative;
+    z-index:2;
+    height:2.75rem;
+    overflow-y:hidden; }
+    
+.nav-scroller .nav {
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:nowrap;
+    flex-wrap:nowrap;
+    padding-bottom:1rem;
+    margin-top:-1px;
+    overflow-x:auto;
+    white-space:nowrap;
+    -webkit-overflow-scrolling:touch; }
+
+.nav-scroller .nav a:hover {
+    color:#000!important }
+
+.flex-auto{
+    -webkit-box-flex:0;
+    -ms-flex:0 0 auto;
+    flex:0 0 auto; }
+
+</style>
+
 <!-- Header Main -->
 <div class="header-main header-main-style-5 navbar-wrap" id="navbar-wrap">
     <div class="container">
@@ -35,39 +64,32 @@
 
             </div>
         </div>
-        <!-- end row -->
 
-        <div class="row">
+        <div class="row d-none d-lg-block">
             <div class="header-menu-bars d-flex align-items-center">
 
-                <!-- start main menu -->
                 <div class="main-menu">
                     <nav class="main-menu__nav">
                         <ul>
-                            <li class="active"><a href="/">Home</a></li>
-                            <li><a href="#">Politics</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Opinion</a></li>
-                            <li><a href="#">Personality</a></li>
-                            <li><a href="#">Sports</a></li>
-                            <li><a href="#">Interview</a></li>
-                            <li><a href="#">Economy</a></li>
-                            <li><a href="#">Entertainment</a></li>
-                            <li><a href="#">Security</a></li>
-                            <li><a href="#">Africa</a></li>
-                            <li><a href="#">World</a></li>
-                            <li><a href="/contact/">Submit a Story</a></li>
+                            <li class="{% url 'news:home' as home_url %}{% if request.get_full_path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home</a></li>
+                            {% for c in categories %} 
+                            <li  class="{% url 'news:category' c.slug as category_url %}{% if request.get_full_path == category_url %}active{% endif %}"><a href="{{ category_url }}">{{ c.title }}</a></li>
+                            {% endfor %}
+                            <li class="{% url 'news:contact' as contact_url %}{% if request.get_full_path == contact_url %}active{% endif %}"><a href="{{ contact_url }}">Submit a Story</a></li>
                         </ul>
                     </nav>
                 </div>
-                <!-- end main menu -->
-
             </div>
         </div>
-        <!-- end row -->
 
+        <div class="nav-scroller py-1 mb-2 d-lg-none">
+            <nav class="nav d-flex justify-content-between">
+                <!-- <span class="py-2 pr-2 font-weight-bold text-decoration-none">Home</span> -->
+                <a class="p-2 text-decoration-none" href="/">Home</a>
+                {% for c in categories %}
+                <a class="{% if forloop.last %}py-2 pl-2{% else %}p-2{% endif %} text-decoration-none" href="{{ c.get_absolute_url }}">{{ c.title }}</a>
+                {% endfor %}
+            </nav>
+        </div>
     </div>
-    <!-- end container -->
 </div>
-<!-- End Header Main -->

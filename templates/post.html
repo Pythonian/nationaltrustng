@@ -1,6 +1,6 @@
 {% extends "base.html" %} 
 
-{% block title %}Post{% endblock %} 
+{% block title %}{{ post.title }} | {{ post.category.title }}{% endblock %} 
 
 {% block content %} 
 
@@ -16,36 +16,29 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="">
-                        Entertainment
+                    <a href="{{ post.category.get_absolute_url }}">
+                        {{ post.category.title }}
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
                     <span class="rt-text-truncate">
-                        Best Tech Accessories 10 Work From Home Essentials We Have Delivery For All Area
+                        {{ post.title }}
                     </span>
                 </li>
             </ol>
         </nav>
     </div>
 </div>
-<!-- End inner page Banner -->
 
-<!-- start rt-sidebar-section-layout-2 -->
 <section class="rt-sidebar-section-layout-2">
     <div class="container">
         <div class="row gutter-40">
-
             <div class="col-xl-9">
                 <div class="rt-left-sidebar-sapcer-5">
-
                     <div class="rt-main-post-single grid-meta">
-
-                        <!-- start post header -->
                         <div class="post-header">
-                            <span class="rt-cat-primary">Entertainment</span>
                             <h2 class="title">
-                                Best Tech Accessories 10 Work From Home Essentials We Have Delivery For All Area
+                                {{ post.title }}
                             </h2>
                             <div class="post-meta">
                                 <ul>
@@ -57,92 +50,33 @@
                                     <li>
                                         <span class="rt-meta">
                                             <i class="far fa-calendar-alt icon"></i>
-                                            DECEMBER 9, 2022
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="rt-meta">
-                                            <i class="far fa-comments icon"></i>
-                                            250 Comments
+                                            {{ post.publish|date:"F j, Y" }}
                                         </span>
                                     </li>
                                     <li>
                                         <span class="rt-meta">
                                             <i class="far fa-clock icon"></i>
-                                            2 minute read
+                                            {{ post.read_time }} minute{{ post.read_time|pluralize }} read
                                         </span>
                                     </li>
                                     <li>
                                         <span class="rt-meta">
                                             <i class="fas fa-eye icon"></i>
-                                            3,250 Views
+                                            {{ post.page_views }} Views
                                         </span>
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                        <!-- end post-header -->
-
-                        <!-- strat post img -->
-                        <figure class="post-img">
-                            <img src="https://placehold.it/960x520" alt="post-img" width="960" height="520">
-                        </figure>
-                        <!-- end post-img -->
-
-                        <!-- strat psot body -->
-                        <div class="post-body">
-                            <p>
-                                There is an unknown printer took a galley of type and their scrambled imaketype
-                                specimen
-                                book has follorrvived not only fiver
-                                centuriewhen an unknown printer took a galley of type and scrambled it to make a
-                                type specimen book. It has survived not
-                                only five centuries but also the leap into electronic typesetting, remaining
-                                essentially unchanged.
-                            </p>
-                            <p>
-                                Travel orem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a gallery Followe
-                                yof type and scrambled it to make a type specimen book. It has survived not only
-                                five centuries, but also the leap into electronics are
-                                o nic typesetting, remaining essentially unchanged.
-                            </p>
-                            <p>
-                                Mravel orem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                when an unknown printer took a galleyof typed
-                                scrambled it to make a type specimen book. It has survived not only five centuries,
-                                but also the leap into electro nic typesetting, remain
-                                ing essentially unchanged.
-                            </p>
-                            <p>
-                                Struggling to sell one multi-million dollar home currently on the market won’t stop
-                                actress and singer Jennifer Lopez from expanding
-                                her propestate holdings an eight-plus acre estate in Bel-Air anchored by a
-                                Struggling to sell one multi-million dollar home uiurrently
-                                on the market won’t stop actress and singer Jennifer.
-                            </p>
-
-                            {% include 'partials/_ad_960_x_150.html' %}
-
-                        </div>
-
-                        <div class="social-share-box-2 mb--40">
-                            <div class="row gutter-30">
-                                <div class="col-xl-7 col-lg-6">
-                                    <div class="conent-block">
-                                        <h4 class="block-tile mb--20">Tags:</h4>
-                                        <div class="tag-list">
-                                            <a href="#" class="tag-link">opinion</a>
-                                            <a href="#" class="tag-link">travel</a>
-                                            <a href="#" class="tag-link">technology</a>
-                                            <a href="#" class="tag-link">politics</a>
+                            <div class="share-box-area">
+                                <div class="left-area">
+                                    <div class="social-share-box">
+                                        <div class="share-text mb--10">
+                                            <span class="rt-meta">
+                                                <i class="fas fa-share-alt icon"></i>
+                                                Share:
+                                            </span>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-5 col-lg-6 d-flex justify-content-start justify-content-lg-end">
-                                    <div class="conent-block">
-                                        <h4 class="block-tile mb--20">Share This Post:</h4>
-                                        <ul class="social-share-style-1 ">
+                                        <ul class="social-share-style-1 mb--10">
                                             <li>
                                                 <a class="fb" target="_blank" href="https://www.facebook.com/">
                                                     <i class="social-icon fab fa-facebook-f"></i>
@@ -158,17 +92,34 @@
                                                     <i class="social-icon fab fa-whatsapp"></i>
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a class="dw" target="_blank" href="https://cloud.google.com/">
-                                                    <i class="social-icon fas fa-envelope"></i>
-                                                </a>
-                                            </li>
                                         </ul>
                                     </div>
                                 </div>
+                                <div class="right-area">
+                                    <ul class="social-share-style-1 layout-2 mb--10">
+                                        <li>
+                                            <a target="_blank" href="https://www.facebook.com/">
+                                                <i class="social-icon fas fa-envelope"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                        <!-- end social-share-box-2 -->
+                        <!-- end post-header -->
+
+                        <!-- strat post img -->
+                        <figure class="post-img">
+                            <img src="{{ post.image.url }}" alt="post-img" width="960" height="520">
+                        </figure>
+                        <!-- end post-img -->
+
+                        <!-- strat psot body -->
+                        <div class="post-body">
+                            {{ post.body|safe }}
+                        </div>
+
+                        {% include 'partials/_ad_horizontal.html' %}
 
                         <!-- start author box -->
                         <div class="author-box-style-1 mb-5">
@@ -333,19 +284,6 @@
                     </div>
 
                     <div class="sidebar-wrap mb-5">
-                        {% include 'partials/_ad_310_x_425.html' %}
-                    </div>
-
-                    <div class="sidebar-wrap mb-5">
-                        <h2 class="rt-section-heading style-2 mb-3">
-                            <span class="rt-section-text">Stay Connected </span>
-                            <span class="rt-section-dot"></span>
-                            <span class="rt-section-line"></span>
-                        </h2>
-                        {% include 'partials/_followus_sidebar.html' %}
-                    </div>
-
-                    <div class="sidebar-wrap mb-5">
                         <h2 class="rt-section-heading style-2 mb-3">
                             <span class="rt-section-text">Related News </span>
                             <span class="rt-section-dot"></span>
@@ -359,35 +297,19 @@
                         </div>
                     </div>
 
-                    <div class="sidebar-wrap mb--40">
-                        <h2 class="rt-section-heading style-2 mb-3">
-                            <span class="rt-section-text">Hot Categories </span>
-                            <span class="rt-section-dot"></span>
-                            <span class="rt-section-line"></span>
-                        </h2>
-                        <ul class="rt-categories">
-                            {% include 'partials/_top_categories.html' %}
-                        </ul>
+                    <div class="sidebar-wrap mb-5">
+                        {% include 'partials/_ad_310_x_425.html' %}
                     </div>
 
-                    <div class="sidebar-wrap mb--40">
+                    <div class="sidebar-wrap mb-5">
                         <h2 class="rt-section-heading style-2 mb-3">
-                            <span class="rt-section-text">Tags </span>
+                            <span class="rt-section-text">Stay Connected </span>
                             <span class="rt-section-dot"></span>
                             <span class="rt-section-line"></span>
                         </h2>
-                        <div class="tag-list">
-                            <a href="#" class="tag-link">beautiful</a>
-                            <a href="#" class="tag-link">travel</a>
-                            <a href="#" class="tag-link">technology</a>
-                            <a href="#" class="tag-link">chemical</a>
-                            <a href="#" class="tag-link">chemical</a>
-                            <a href="#" class="tag-link">politics</a>
-                            <a href="#" class="tag-link">business</a>
-                            <a href="#" class="tag-link">makeup</a>
-                            <a href="#" class="tag-link">social</a>
-                        </div>
+                        {% include 'partials/_followus_sidebar.html' %}
                     </div>
+
                 </div>
             </div>
         </div>

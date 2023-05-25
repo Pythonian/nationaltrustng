@@ -1,0 +1,18 @@
+<div class="item">
+    <div class="item-content">
+        <div class="post-img me-0 mb-2">
+            <a href="{{ post.get_absolute_url }}">
+                <img src="{{ post.image.url }}" alt="post" width="551" height="431">
+            </a>
+        </div>
+        <h4 class="post-title">
+            <a href="{{ post.get_absolute_url }}">
+                {{ post.title }}
+            </a>
+        </h4>
+        <span class="rt-meta">
+            <i class="far fa-calendar-alt icon"></i>
+            {{ post.created|date:"F j, Y" }}
+        </span>
+    </div>
+</div>

@@ -10471,9 +10471,6 @@ video {
   margin-bottom: 25px;
   line-height: 1;
 }
-.footer-widget .widget-list .widget-list-item:last-child {
-  margin-bottom: 0;
-}
 .footer-widget .widget-list .widget-list-link {
   color: #8f8f8f;
   position: relative;

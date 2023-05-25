@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}{% endblock title %}</title>
+    <title>{% block title %}{% endblock title %} | National Trust Nigeria</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
@@ -28,10 +28,10 @@
 
     <div id="wrapper" class="wrapper">
         <div id="main_content">
-            <header class="rt-header">
+            <header>
                 {% include 'partials/_navbar.html' %}
             </header>
-            {% include 'partials/_mobilenav.html' %}
+            {# include 'partials/_mobilenav.html' #}
             <main>
                 {% block content %} {% endblock content %}
             </main>

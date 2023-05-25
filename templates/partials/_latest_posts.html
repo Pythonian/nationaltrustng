@@ -1,39 +1,37 @@
 <div class="featured-middle-post-style-5">
     <div class="rt-post post-md style-5 grid-meta">
         <div class="post-img">
-            <a href="/post/">
-                <img src="https://placehold.it/1200x491" alt="post" width="1200" height="491">
+            <a href="{{ post.get_absolute_url }}">
+                <img src="{{ post.image.url }}" alt="{{ post.image_caption }}" width="960" height="491">
             </a>
         </div>
         <div class="post-content">
-            <a href="" class="rt-post-cat-normal">Latest Story</a>
+            <a href="{# post.category.get_absolute_url #}" class="rt-post-cat-normal">{{ post.category.title }}</a>
             <h3 class="post-title">
-                <a href="/post/">
-                    After Moon They ar Land CloseSpace
-                    Get the best Really
+                <a href="{{ post.get_absolute_url }}">
+                    {{ post.title }}
                 </a>
             </h3>
             <p>
-                Ahen an unknown printer took a galley of type and scrambled imake
-                type specimen book has survived not only five centurie.
+                {{ post.body|truncatechars:280|safe }}
             </p>
             <div class="post-meta">
                 <ul>
                     <li>
                         <span class="rt-meta">
-                            by <a href="" class="name">Seyi Pythonian</a>
+                            by <a href="#" class="name">{{ post.author }}</a>
                         </span>
                     </li>
                     <li>
                         <span class="rt-meta">
                             <i class="far fa-calendar-alt icon"></i>
-                            DECEMBER 9, 2022
+                            {{ post.created|date:"F j, Y" }}
                         </span>
                     </li>
                     <li>
                         <span class="rt-meta">
                             <i class="fas fa-eye icon"></i>
-                            3,250
+                            {{ post.page_views }}
                         </span>
                     </li>
                 </ul>

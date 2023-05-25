@@ -1,8 +1,86 @@
+<!-- Start Footer 
+<footer class="footer footer-style-5">
+    <div class="section overflow-hidden mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-subscribe-wrapper section-padding">
+                        <div class="row g-4 g-xl-5 justify-content-between">
+                            <div class="col-lg-5">
+                                <div class="rt-subscribe-title-box-style-8">
+                                    <div class="icon-wrap">
+                                        <span class="icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                    <div class="title-wrap">
+                                        <h3 class="title">
+                                            Subscribe To Our Mailing List
+                                        </h3>
+                                        <p>
+                                            Get the news right tn your inbox
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-7 align-self-center">
+
+                                <form action="#" class="rt-contact-form subscribe-form-style-8">
+                                    <div class="rt-subs-group">
+                                        <input type="email" name="email" id="email_2" class="subscribe-form"
+                                            placeholder="Your e-mail" data-error="Email field is required" required>
+                                        <button type="submit" class="subscribe-btn">Subscribe </button>
+                                    </div>
+                                    <div class="form-response"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="footer-widget-style-2 d-flex align-items-center justify-content-center text-center flex-column">
+            <div class="mb-4">
+                <a href="index.html">
+                    <img src="https://placehold.it/170x50" alt="logo-classic" width="170" height="50">
+                </a>
+            </div>
+            <ul class="footer-menu-style-2">
+                <li>
+                    <a href="#">Advertise with us</a>
+                </li>
+                <li>
+                    <a href="#">Privacy policy</a>
+                </li>
+                <li>
+                    <a href="#">Terms of service</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="d-flex justify-content-between">
+            <p class="copyright-text mb-0">
+                <span class="currentYear"></span> &copy; All rights reserved.
+            </p>
+            <p class="copyright-text">
+                Developed by <a href="">Seyi Pythonian</a>
+                
+            </p>
+        </div>
+    </div>
+
+</footer>
+ End  Footer -->
+
 <!-- Start Footer -->
 <footer class="footer footer-style-5">
 
     <!-- start subscribe section -->
-    <div class="section overflow-hidden mb-5">
+    <div class="section overflow-hidden">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -29,7 +107,7 @@
 
                             <div class="col-lg-7 align-self-center">
 
-                                <form action="#" class="rt-contact-form subscribe-form-style-8">
+                                <form action="index9.html#" class="rt-contact-form subscribe-form-style-8">
                                     <div class="rt-subs-group">
                                         <input type="email" name="email" id="email_2" class="subscribe-form"
                                             placeholder="Your e-mail" data-error="Email field is required" required>
@@ -51,37 +129,87 @@
     </div>
     <!-- end subscribe section -->
 
-    <div class="container mb-5">
-        <div class="footer-widget-style-2 d-flex align-items-center justify-content-center text-center flex-column">
-            <div class="mb-4">
-                <a href="index.html">
-                    <img src="https://placehold.it/170x50" alt="logo-classic" width="170" height="50">
-                </a>
-            </div>
-            <ul class="footer-menu-style-2">
-                <li>
-                    <a href="#">Advertise with us</a>
-                </li>
-                <li>
-                    <a href="#">Privacy policy</a>
-                </li>
-                <li>
-                    <a href="#">Terms of service</a>
-                </li>
-            </ul>
-        </div>
-        <!-- end footer-widget-style-2 -->
+    <div class="footer-top footer-style-1">
+        <div class="container">
+            <div class="row gutter-30 justify-content-between">
 
-        <div class="d-flex justify-content-between">
-            <p class="copyright-text mb-0">
-                <span class="currentYear"></span> &copy; All rights reserved.
-            </p>
-            <p class="copyright-text">
-                <!-- Developed by <a href="">Seyi Pythonian</a> -->
-                Right copyleft
-            </p>
+                <div class="col-xl-4 col-md-6">
+                    <div class="footer-widget">
+                        <div class="logo footer-logo">
+                            <a href="/">
+                                <img src="https://placehold.it/170x50" alt="logo-classic" width="170" height="50">
+                            </a>
+                        </div>
+                        <p class="text">
+                            No 23 Sholabomi Crescent,<br>
+                            Off Oladimeji street,<br>
+                            Aguda, Surulere, Lagos state.<br>
+                        </p>
+                        <p class="copyright-text mb-0">
+                            &copy;2019 - 2023 &bull; National Trust Nigeria. All right reserved.
+                        </p>
+                    </div>
+                </div>
+                <!-- end col -->
+
+                <div class="col-xl-4 col-md-6 d-flex justify-content-xl-center justify-content-start">
+                    <div class="footer-widget">
+                        <h3 class="footer-widget-title">Categories</h3>
+                        <ul class="widget-list cat-list">
+                            {% for c in categories %}
+                            <li class="widget-list-item">
+                                <a href="{{ c.get_absolute_url }}" class="widget-list-link">
+                                    {{ c.title }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!-- end col -->
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="footer-widget">
+                        <h3 class="footer-widget-title">Popular Posts</h3>
+
+                        <div class="footer-post-list">
+                            {% for post in latest_stories %}
+                            {% include 'partials/_popular_posts_footer.html' %}
+                            {% empty %}
+                            <p>No posts yet.</p>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <!-- End footer top -->
+
+    <!-- <div class="footer-bottom">
+        <div class="container">
+            <div class="footer-bottom-area d-flex align-items-center justify-content-center">
+                <div class="footer-widget-style-2 d-flex align-items-center justify-content-center text-center flex-column">
+                    <ul class="footer-menu-style-2">
+                        <li>
+                            <a href="#">Advertise with us</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms of service</a>
+                        </li>
+                    </ul>
+                </div>
+                <p class="copyright-text mb-0">
+                    &copy; all right reserved by
+                    <a href=" rel="nofollow">Pythonian</a>
+                </p>
+            </div>
+        </div>
+    </div> -->
 
 </footer>
 <!-- End  Footer -->
