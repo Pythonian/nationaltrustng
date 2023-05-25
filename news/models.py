@@ -21,7 +21,7 @@ content_validator = MinLengthValidator(
 class Category(models.Model):
     title = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=50, unique=True)
-    order = models.SmallIntegerField()
+    order = models.SmallIntegerField(unique=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

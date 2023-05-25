@@ -19,13 +19,15 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         categories = Category.objects.all()
         total = kwargs['total']
+        paragraphs = fake.paragraphs(nb=10)
+        text = '\n\n'.join(paragraphs)
 
         for _ in range(total):
             title = fake.sentence()
             slug = slugify(title)
             author = User.objects.get(id=1)
             category = random.choice(categories)
-            body = fake.text()
+            body = text
             page_views = fake.random_int(min=1, max=1000)
             read_time = fake.random_int(min=1, max=10)
             created = fake.date_this_year()

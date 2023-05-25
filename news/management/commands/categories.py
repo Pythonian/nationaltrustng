@@ -1,40 +1,43 @@
 from django.core.management.base import BaseCommand
 from django.utils.text import slugify
 
-from faker import Faker
-from faker.providers import DynamicProvider
-
 from news.models import Category
 
-elements = [
+categories = [
     'Politics',
     'News',
     'Features',
     'Opinion',
     'Personality',
-    'Sport',
+    'Sports',
     'Interview',
     'Economy',
+    'Entertainment',
     'Security',
     'Africa',
-    'World'
+    'World',
+    'Editorial'
 ]
-
-category_provider = DynamicProvider(
-    provider_name="category",
-    elements=elements
-)
-
-fake = Faker()
-fake.add_provider(category_provider)
-
 
 class Command(BaseCommand):
     help = 'Populates the database with Categories'
-
+    
     def handle(self, *args, **kwargs):
-        for _ in range(len(elements)):
-            Category.objects.get_or_create(
-                title=fake.category(),
-                slug=slugify(fake.category()))
-        self.stdout.write(self.style.SUCCESS(f'Successfully added {len(elements)} Categories.'))
+        order = 1
+        for category_title in categories:
+            slug = slugify(category_title)
+
+            # Check if category with same slug already exists
+            if Category.objects.filter(slug=slug).exists():
+                continue
+
+            category = Category(
+                title=category_title,
+                slug=slug,
+                order=order
+            )
+            category.save()
+
+            order += 1
+
+        self.stdout.write(self.style.SUCCESS(f'Successfully added {len(categories)} Categories.'))

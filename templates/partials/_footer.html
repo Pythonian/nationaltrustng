@@ -131,7 +131,7 @@
 
     <div class="footer-top footer-style-1">
         <div class="container">
-            <div class="row gutter-30 justify-content-between">
+            <div class="row gutter-30 justify-content-lg-between">
 
                 <div class="col-xl-4 col-md-6">
                     <div class="footer-widget">
@@ -162,6 +162,8 @@
                                     {{ c.title }}
                                 </a>
                             </li>
+                            {% empty %} 
+                            <p>No categories yet.</p>
                             {% endfor %}
                         </ul>
                     </div>
@@ -170,14 +172,18 @@
 
                 <div class="col-xl-3 col-md-6">
                     <div class="footer-widget">
-                        <h3 class="footer-widget-title">Popular Posts</h3>
-
-                        <div class="footer-post-list">
-                            {% for post in latest_stories %}
-                            {% include 'partials/_popular_posts_footer.html' %}
-                            {% empty %}
-                            <p>No posts yet.</p>
-                            {% endfor %}
+                        <div class="sidebar-wrap mb-5">
+                            <div class="search-box">
+                                <form action="#" class="form search-form-box">
+                                    <div class="form-group">
+                                        <input type="text" name="sarch" id="search" placeholder="Search..."
+                                            class="form-control rt-search-control">
+                                        <button type="submit" class="search-submit">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
 
                     </div>
