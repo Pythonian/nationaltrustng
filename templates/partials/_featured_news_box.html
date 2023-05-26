@@ -15,7 +15,7 @@
                         <ul>
                             <li>
                                 <span class="rt-meta">
-                                    By <a href="" class="name">{{ post.author }}</a>
+                                    By <a href="#" class="name">{{ post.author }}</a>
                                 </span>
                             </li>
                             <li>
@@ -27,7 +27,7 @@
                         </ul>
                     </div>
                     <p class="mb-0">
-                        {{ post.body|truncatechars:130 }}
+                        {{ post.body|truncatechars:130|safe }}
                     </p>
                 </li>
             </ul>

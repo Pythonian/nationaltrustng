@@ -1,6 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from django.db.models import Q
-
+from django.db.models import Count, Q
 from .models import Post, Category
 from .utils import mk_paginator
 
@@ -19,7 +18,7 @@ def home(request):
     latest_economy = news.filter(category__title='Economy')[:4]
     latest_entertainment = news.filter(category__title='Entertainment')[:4]
     latest_security = news.filter(category__title='Security')[:4]
-    latest_columnists = news.filter(category__title='Columnists')[:1]
+    latest_editorial = news.filter(category__title='Editorial')[:1]
 
     template = 'home.html'
     context = {
@@ -35,7 +34,7 @@ def home(request):
         'latest_economy': latest_economy,
         'latest_entertainment': latest_entertainment,
         'latest_security': latest_security,
-        'latest_columnists': latest_columnists,
+        'latest_editorial': latest_editorial,
     }
 
     return render(request, template, context)
@@ -44,8 +43,14 @@ def home(request):
 def post(request, slug):
     
     post = get_object_or_404(Post, slug=slug)
-
     similar_posts = Post.objects.filter(category=post.category.id).exclude(id=post.id)[:4]
+
+    # Create a session key for a visitor
+    session_key = 'viewed_post_{}'.format(post.pk)
+    if not request.session.get(session_key, False):
+        post.page_views += 1
+        post.save()
+        request.session[session_key] = True
 
     return render(request,
                   'post.html',
@@ -65,11 +70,19 @@ def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     posts = category.posts.all()
     posts = mk_paginator(request, posts, 10)
+    # Retrieve top categories by post count
+    top_categories = Category.objects.annotate(post_count=Count('posts')).order_by('-post_count')[:5]
+    # Get the number of posts for each top category
+    top_categories_with_count = [(cat, cat.post_count) for cat in top_categories]
+    # Retrieve most popular news posts in the category based on page views
+    popular_posts = category.posts.order_by('-page_views')[:5]
     
     template = 'category.html'
     context = {
         'category': category,
         'posts': posts,
+        'top_categories': top_categories_with_count,
+        'popular_posts': popular_posts,
     }
 
     return render(request, template, context)

@@ -34,7 +34,7 @@
             <div class="header-action-bars d-flex align-items-center justify-content-between">
 
                 <!-- start header actions -->
-                <ul class="header-action-items">
+                <ul class="header-action-items d-none d-sm-block">
                     <li class="rt-meta">
                         <i class="far fa-calendar-alt icon"></i>
                         <span class="currentDate">
@@ -56,8 +56,8 @@
 
                 <!-- start header actions -->
                 <ul class="header-action-items">
-                    <li class="item">
-                        <a href="index5.html#template-search"><i class="fas fa-search"></i></a>
+                    <li class="item humburger offcanvas-menu-btn menu-status-open">
+                        <span></span>
                     </li>
                 </ul>
                 <!-- end header actions -->
@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <div class="row d-none d-lg-block">
+        <div class="row d-none d-xl-block">
             <div class="header-menu-bars d-flex align-items-center">
 
                 <div class="main-menu">
@@ -82,14 +82,109 @@
             </div>
         </div>
 
-        <div class="nav-scroller py-1 mb-2 d-lg-none">
+        <div class="nav-scroller py-1 mb-2 d-xl-none">
             <nav class="nav d-flex justify-content-between">
-                <!-- <span class="py-2 pr-2 font-weight-bold text-decoration-none">Home</span> -->
-                <a class="p-2 text-decoration-none" href="/">Home</a>
                 {% for c in categories %}
-                <a class="{% if forloop.last %}py-2 pl-2{% else %}p-2{% endif %} text-decoration-none" href="{{ c.get_absolute_url }}">{{ c.title }}</a>
+                <a class="p-2 text-decoration-none" href="{{ c.get_absolute_url }}">{{ c.title }}</a>
                 {% endfor %}
+                <a class="py-2 ps-2 text-decoration-none" href="/category/editorial/">Editorial</a>
             </nav>
+        </div>
+    </div>
+</div>
+
+<div class="offcanvas-menu-wrap offcanvas-menu-wrap-style-2" id="offcanvas-wrap" data-position="left">
+
+    <div class="offcanvas-content offcanvas-content-style-2">
+
+        <div class="offcanvas-top-area">
+            <div class="offcanvas-header">
+                <div class="offcanvas-logo">
+                    <a href="/">
+                        <img src="https://placehold.it/170x50" alt="logo" width="170" height="50">
+                    </a>
+                </div>
+                <div class="close-btn offcanvas-close">
+                    <a href="javascript:void(0)">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="offscreen-navigation">
+                <nav class="menu-main-primary-container">
+                    <ul class="menu">
+                        <li class="list">
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="list">
+                            <a href="/about/">About us</a>
+                        </li>
+                        <li class="list">
+                            <a href="/contact/">Submit a Story</a>
+                        </li>
+                        <li class="list">
+                            <a href="/advetise/">Advertise with us</a>
+                        </li>
+                        <li class="list">
+                            <a href="/privacy/">Privacy</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+        <div class="offcanvas-bottom-area">
+            <div class="offcanvas-widget footer-widget">
+                <h3 class="offcanvas-widget-title">Contact Info</h3>
+                <p>
+                    No 23 Sholabomi Crescent,<br>
+                    Off Oladimeji street,<br>
+                    Aguda, Surulere, Lagos state.<br>
+                </p>
+                <ul class="contact-info-list widget-list">
+                    <li class="widget-list-item">
+                        <i class="fas fa-phone-alt list-icon"></i>
+                        <a href="tel:7062299016" class="widget-list-link">
+                            (+234) 706-2299-016
+                        </a>
+                    </li>
+                    <li class="widget-list-item">
+                        <i class="fas fa-envelope list-icon"></i>
+                        <a href="mailto:prontomaster@gmail.com" class="widget-list-link">
+                            prontomaster@gmail.com
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="offcanvas-widget footer-widget">
+                <p class="copyright-text style-2 mb-4">
+                    &copy;2019 - 2023 &bull; National Trust Nigeria. All right reserved.
+                </p>
+                <ul class="footer-social style-2">
+                    <li class="social-item">
+                        <a href="https://www.facebook.com/" class="social-link fb" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="https://twitter.com/" class="social-link tw" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="https://vimeo.com/" class="social-link vm" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li class="social-item">
+                        <a href="https://www.whatsapp.com/" class="social-link wh" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
