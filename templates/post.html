@@ -1,5 +1,5 @@
 {% extends "base.html" %} 
-
+{% load static %}
 {% block title %}{{ post.title }} | {{ post.category.title }}{% endblock %} 
 
 {% block content %} 
@@ -62,7 +62,7 @@
                                     <li>
                                         <span class="rt-meta">
                                             <i class="fas fa-eye icon"></i>
-                                            {{ post.page_views }} Views
+                                            {{ post.page_views }} View{{ post.page_views|pluralize }}
                                         </span>
                                     </li>
                                 </ul>
@@ -282,6 +282,24 @@
                                     </button>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h2 class="rt-section-heading style-2 mb-3">
+                            <span class="rt-section-text">Editor-in-Chief</span>
+                            <span class="rt-section-dot"></span>
+                            <span class="rt-section-line"></span>
+                        </h2>
+                        <div class="team-box-style-1">
+                            <div class="team-img">
+                                <img src="{% static 'img/martin.jpg' %}" alt="team_1" width="551" height="610">
+                            </div>
+                            <div class="team-content">
+                                <h3 class="name">Martins Mejabi</h3>
+                                <span class="designation">Editor-in-Chief</span>
+                                <span class="designation">martinsmedeludo@gmail.com</span>
+                            </div>
                         </div>
                     </div>
 
