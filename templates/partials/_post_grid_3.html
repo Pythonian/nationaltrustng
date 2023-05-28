@@ -10,9 +10,21 @@
                 {{ post.title }}
             </a>
         </h4>
-        <span class="rt-meta">
-            <i class="far fa-calendar-alt icon"></i>
-            {{ post.created|date:"F j, Y" }}
-        </span>
+        <div class="post-meta">
+            <ul>
+                <li>
+                    <span class="rt-meta">
+                        By National Trust
+                    </span>
+                </li>
+                <li>
+                    <span class="rt-meta">
+                        <i class="far fa-calendar-alt icon"></i>
+                        {{ post.created|date:"F j, Y" }}
+                    </span>
+                </li>
+            </ul>
+        </div>
+        
     </div>
 </div>

@@ -6,8 +6,8 @@ from .models import Category, Post
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['title', 'author', 'created']
-    list_filter = ['category', 'created', 'author']
+    list_display = ['title', 'created']
+    list_filter = ['category', 'created']
     search_fields = ['title', 'body']
     prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'created'
@@ -31,16 +31,6 @@ class PostAdmin(admin.ModelAdmin):
             redirect_url = post.get_absolute_url()
             response = HttpResponseRedirect(redirect_url)
         return response
-    
-    # def add_view(self, request, form_url='', extra_context=None):
-    #     # Save the new post
-    #     response = super().add_view(request, form_url, extra_context)
-    #     if isinstance(response, HttpResponseRedirect):
-    #         # Retrieve the saved post object
-    #         post = self.model.objects.latest('id')
-    #         # Redirect to the post's get_absolute_url page
-    #         response.url = post.get_absolute_url()
-    #     return response
 
 
 @admin.register(Category)

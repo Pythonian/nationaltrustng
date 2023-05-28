@@ -17,8 +17,11 @@
     white-space:nowrap;
     -webkit-overflow-scrolling:touch; }
 
+.nav-scroller .nav a {
+    color:#fff!important }
+
 .nav-scroller .nav a:hover {
-    color:#000!important }
+    color:firebrick !important }
 
 .flex-auto{
     -webkit-box-flex:0;
@@ -28,39 +31,36 @@
 </style>
 
 <!-- Header Main -->
-<div class="header-main header-main-style-5 navbar-wrap" id="navbar-wrap">
+<div class="header-main header-main-style-5 navbar-wrap text-white" id="navbar-wrap" style="background-color:#000;">
     <div class="container">
         <div class="row">
+            <ul class="header-action-items d-sm-none pt-3">
+                <li class="rt-meta me-3">
+                    <i class="far fa-calendar-alt icon"></i>
+                    <span class="currentDate text-white"></span>
+                </li>
+                <li class="rt-meta">
+                    <i class="fas fa-map-marker icon"></i>
+                    <span class="text-white">Abuja, Nigeria.</span>
+                </li>
+            </ul>
             <div class="header-action-bars d-flex align-items-center justify-content-between">
 
-                <!-- start header actions -->
                 <ul class="header-action-items d-none d-sm-block">
                     <li class="rt-meta">
                         <i class="far fa-calendar-alt icon"></i>
-                        <span class="currentDate">
-                            FEBRUARY 9, 2023
-                        </span>
+                        <span class="currentDate text-white"></span>
                     </li>
-                    
                 </ul>
-                <!-- end header actions -->
-
-                <!-- end humburger icon -->
-
-                <!-- start logo here -->
+                
                 <div class="site-branding">
-                    <a href="/"><h1 class="fw-bold" style="color:firebrick; font-family: 'Rowdies', cursive;">National Trust</h1></a>
+                    <a href="/"><h1 class="fw-bold text-white" style="font-family: 'Rowdies', cursive; font-size: 38px;">National Trust</h1></a>
                 </div>
-                <!-- end logo here -->
-
-                <!-- start header actions -->
                 <ul class="header-action-items">
-                    <li class="item humburger offcanvas-menu-btn menu-status-open">
+                    <li class="item humburger offcanvas-menu-btn menu-status-open text-white">
                         <span></span>
                     </li>
                 </ul>
-                <!-- end header actions -->
-
             </div>
         </div>
 
@@ -100,7 +100,7 @@
             <div class="offcanvas-header">
                 <div class="offcanvas-logo">
                     <a href="/">
-                        <h3 class="fw-bold" style="color:firebrick; font-family: 'Rowdies', cursive;">National Trust</h3>
+                        <h3 class="fw-bold" style="color:firebrick; font-family: 'Rowdies', cursive; font-size: 25px;">National Trust</h3>
                     </a>
                 </div>
                 <div class="close-btn offcanvas-close">

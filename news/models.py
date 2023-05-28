@@ -1,5 +1,4 @@
 import datetime
-from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
@@ -41,10 +40,6 @@ class Post(models.Model):
     title = models.CharField(_('title'), max_length=250)
     slug = models.SlugField(_('slug'), max_length=250,
                             unique_for_date='created')
-    author = models.ForeignKey(settings.AUTH_USER_MODEL,
-                               on_delete=models.CASCADE,
-                               verbose_name=_('author'),
-                               related_name='posts')
     category = models.ForeignKey(Category,
                                  null=True,
                                  on_delete=models.PROTECT,

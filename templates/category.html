@@ -1,5 +1,5 @@
 {% extends "base.html" %} 
-{% load static %}
+
 {% block title %}{{ category.title }} | Category{% endblock %}
 
 {% block content %} 
@@ -63,16 +63,7 @@
                             <span class="rt-section-dot"></span>
                             <span class="rt-section-line"></span>
                         </h2>
-                        <div class="team-box-style-1">
-                            <div class="team-img">
-                                <img src="{% static 'img/martin.jpg' %}" alt="team_1" width="551" height="610">
-                            </div>
-                            <div class="team-content">
-                                <h3 class="name">Martins Mejabi</h3>
-                                <span class="designation">Editor-in-Chief</span>
-                                <span class="designation">martinsmedeludo@gmail.com</span>
-                            </div>
-                        </div>
+                        {% include 'partials/_editor_profile_card.html' %}
                     </div>
                     
                     <div class="sidebar-wrap mb-5">

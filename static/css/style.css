@@ -3481,7 +3481,7 @@ Modal
   margin-right: 17px;
 }
 .main-menu__nav ul li.active > a {
-  color: #2962ff;
+  color: firebrick;
 }
 .main-menu__nav ul li:last-child {
   margin-right: 0;
@@ -3505,7 +3505,7 @@ Modal
 }
 .main-menu__nav ul li > a {
   font-size: 0.9375rem;
-  color: var(--color-black);
+  color: var(--color-body-bg);
   font-weight: 500;
   position: relative;
   display: inline-block;
@@ -3519,7 +3519,7 @@ Modal
   position: absolute;
   content: "";
   height: 4px;
-  background: #2962ff;
+  background: firebrick;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -3532,10 +3532,10 @@ Modal
   transition: transform 0.4s cubic-bezier(0.51, 0.92, 0.24, 1), -webkit-transform 0.4s cubic-bezier(0.51, 0.92, 0.24, 1);
 }
 .main-menu__nav ul li:hover > a {
-  color: #2962ff;
+  color: firebrick;
 }
 .main-menu__nav ul li:hover > a::before {
-  background: #2962ff;
+  background: firebrick;
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
@@ -3597,7 +3597,7 @@ Modal
   bottom: 0;
   margin: auto 0;
   left: 0;
-  background: #2962ff;
+  background: firebrick;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -3732,7 +3732,7 @@ Modal
   display: block;
   width: 28px;
   height: 2px;
-  background-color: #636363;
+  background-color: #fff;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -5091,17 +5091,12 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
 //  team-box-style-1
 =============================*/
 .team-box-style-1 .team-img {
-  overflow: hidden;
-  position: relative;
   margin-bottom: 15px;
+  text-align: center;
 }
 .team-box-style-1 .team-img img {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: all 1.5s ease-out;
-  transition: all 1.5s ease-out;
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
+  width: 50%;
+  height: 50%;
 }
 .team-box-style-1 .team-content {
   text-align: center;
@@ -5120,12 +5115,6 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
 .team-box-style-1 .team-content .designation {
   display: block;
   margin-bottom: 15px;
-}
-.team-box-style-1:hover .team-img img {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
 }
 
 /*=============================

@@ -1,5 +1,5 @@
 {% extends "base.html" %} 
-{% load static %}
+
 {% block title %}{{ post.title }} | {{ post.category.title }}{% endblock %} 
 
 {% block content %} 
@@ -44,7 +44,7 @@
                                 <ul>
                                     <li>
                                         <span class="rt-meta">
-                                            by {{ post.author.get_full_name }}
+                                            by National Trust
                                         </span>
                                     </li>
                                     <li>
@@ -110,7 +110,7 @@
 
                         <!-- strat post img -->
                         <figure class="post-img">
-                            <img src="{{ post.image_thumbnail.url|default:post.image.url }}" alt="post-img" width="960" height="520">
+                            <img src="{{ post.image.url }}" alt="post-img" width="960" height="520">
                         </figure>
                         <!-- end post-img -->
 
@@ -291,16 +291,7 @@
                             <span class="rt-section-dot"></span>
                             <span class="rt-section-line"></span>
                         </h2>
-                        <div class="team-box-style-1">
-                            <div class="team-img">
-                                <img src="{% static 'img/martin.jpg' %}" alt="team_1" width="551" height="610">
-                            </div>
-                            <div class="team-content">
-                                <h3 class="name">Martins Mejabi</h3>
-                                <span class="designation">Editor-in-Chief</span>
-                                <span class="designation">martinsmedeludo@gmail.com</span>
-                            </div>
-                        </div>
+                        {% include 'partials/_editor_profile_card.html' %}
                     </div>
 
                     <div class="sidebar-wrap mb-5">
