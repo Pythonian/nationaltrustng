@@ -44,13 +44,13 @@
                                 <ul>
                                     <li>
                                         <span class="rt-meta">
-                                            by <a href="" class="name">Seyi Pythonian</a>
+                                            by {{ post.author.get_full_name }}
                                         </span>
                                     </li>
                                     <li>
                                         <span class="rt-meta">
                                             <i class="far fa-calendar-alt icon"></i>
-                                            {{ post.publish|date:"F j, Y" }}
+                                            {{ post.created|date:"F j, Y" }}
                                         </span>
                                     </li>
                                     <li>
@@ -110,7 +110,7 @@
 
                         <!-- strat post img -->
                         <figure class="post-img">
-                            <img src="{{ post.image.url }}" alt="post-img" width="960" height="520">
+                            <img src="{{ post.image_thumbnail.url|default:post.image.url }}" alt="post-img" width="960" height="520">
                         </figure>
                         <!-- end post-img -->
 
@@ -120,11 +120,11 @@
                         </div>
 
                         <div class="my-5">
-                            {% include 'partials/_ad_horizontal.html' %}
+                            {# include 'partials/_ad_horizontal.html' #}
                         </div>
 
                         <!-- start author box -->
-                        <div class="author-box-style-1 mb-5">
+                        <!-- <div class="author-box-style-1 mb-5">
                             <div class="author-img">
                                 <img src="https://placehold.it/170" alt="author-img_1" width="170" height="170">
                             </div>
@@ -157,7 +157,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- end author box -->
 
                         {% if post.get_previous_by_created or post.get_next_by_created %}
@@ -215,7 +215,7 @@
                         {% endif %}
 
                         <!-- start blog-post-comment -->
-                        <div class="blog-post-comment mb--50">
+                        <!-- <div class="blog-post-comment mb--50">
                             <form action="#" class="rt-contact-form comments-form-style-1">
                                 <div class="row">
                                     <div class="col-xl-6">
@@ -262,7 +262,7 @@
                                     <div class="form-response"></div>
                                 </div>
                             </form>
-                        </div>
+                        </div> -->
                         <!-- end blog-post-comment -->
                     </div>
                 </div>
