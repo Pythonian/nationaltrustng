@@ -6,53 +6,25 @@
             <div class="col-lg-7">
                 <div class="rt-trending rt-trending-style-1">
                     <p class="trending-title">
-                        <i class="fas fa-bolt icon"></i>
-                        Headline News
+                        Latest News
                     </p>
                     <div class="rt-treding-slider1 swiper-container">
                         <div class="swiper-wrapper">
+                            {% for post in latest_news %}
                             <div class="swiper-slide">
                                 <div class="item">
                                     <p class="trending-slide-title">
-                                        Unknown gunmen attacks the UN convoy in Anambra State.
+                                        {{ post.title }}
                                     </p>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="item">
-                                    <p class="trending-slide-title">
-                                        President Buhari commissions Lekki Port in Lagos State.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="item">
-                                    <p class="trending-slide-title">
-                                        Drama as Presidential election tribunal resumes sitting in
-                                        Abuja.
-                                    </p>
-                                </div>
-                            </div>
+                            {% empty %} 
+                            <p>No news yet</p>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- end col -->
-
-            <div class="col-lg-5">
-                <div class="rt-topbar-right">
-                    <div class="meta-wrap">
-                        <span class="rt-meta">
-                            <i class="far fa-calendar-alt icon"></i>
-                            <span class="currentDate">
-                                FEBRUARY 9, 2023
-                            </span>
-                        </span>
-                    </div>
-
-                </div>
-            </div>
-            <!-- end col -->
 
         </div>
         <!-- end row -->

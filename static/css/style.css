@@ -3481,7 +3481,7 @@ Modal
   margin-right: 17px;
 }
 .main-menu__nav ul li.active > a {
-  color: firebrick;
+  color: #000;
 }
 .main-menu__nav ul li:last-child {
   margin-right: 0;
@@ -3519,7 +3519,7 @@ Modal
   position: absolute;
   content: "";
   height: 4px;
-  background: firebrick;
+  background: #000;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -3532,10 +3532,10 @@ Modal
   transition: transform 0.4s cubic-bezier(0.51, 0.92, 0.24, 1), -webkit-transform 0.4s cubic-bezier(0.51, 0.92, 0.24, 1);
 }
 .main-menu__nav ul li:hover > a {
-  color: firebrick;
+  color: #000;
 }
 .main-menu__nav ul li:hover > a::before {
-  background: firebrick;
+  background: #000;
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
@@ -3597,7 +3597,7 @@ Modal
   bottom: 0;
   margin: auto 0;
   left: 0;
-  background: firebrick;
+  background: #000;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;

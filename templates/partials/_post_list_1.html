@@ -13,7 +13,7 @@
                     </a>
                 </h3>
                 <p>
-                    {{ post.body|truncatechars:280 }}
+                    {{ post.body|truncatechars:280|safe }}
                 </p>
                 <div class="post-meta">
                     <ul>
