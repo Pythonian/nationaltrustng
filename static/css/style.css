@@ -1537,7 +1537,7 @@ section,
 .rt-btn-primary {
   font-size: 0.875rem;
   color: var(--color-white);
-  background-color: var(--color-primary);
+  background-color: firebrick;
   font-weight: 700;
   border-radius: 4px;
   border: 1px solid transparent;
@@ -1560,7 +1560,7 @@ section,
 }
 .rt-btn-primary:hover {
   color: var(--color-white);
-  background-color: #0034c2;
+  background-color: rgb(137, 27, 27);
 }
 .rt-btn-primary:focus {
   outline: 0;

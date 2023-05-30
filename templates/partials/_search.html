@@ -1,0 +1,9 @@
+<form action="{% url 'news:search' %}" class="form search-form-box">
+    <div class="form-group">
+        <input type="text" name="q" id="search" placeholder="Search..." class="form-control rt-search-control"
+            value="{{ request.GET.q }}">
+        <button type="submit" class="search-submit">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+</form>

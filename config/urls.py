@@ -18,12 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.flatpages import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('news.urls', namespace='news')),
 ]
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
@@ -33,5 +35,5 @@ admin.site.site_header = 'National Trust CMS'
 admin.site.index_title = 'Admin Dashboard'
 admin.site.site_title = 'National Trust Administration'
 
-# handler500 = 'apps.core.views.error_500'
-# handler404 = 'apps.core.views.error_404'
+handler500 = 'news.views.error_500'
+handler404 = 'news.views.error_404'

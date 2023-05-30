@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{{ flatpage.title }}{% endblock %}
+
+{% block content %}
+
+<div class="banner inner-banner">
+    <div class="container">
+        <nav class="rt-breadcrumb-wrap" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <span class="rt-text-truncate">
+                        {{ flatpage.title }}
+                    </span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            {{ flatpage.content|safe }}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

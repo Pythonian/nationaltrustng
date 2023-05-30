@@ -88,18 +88,26 @@ def category(request, slug):
     return render(request, template, context)
 
 
-def post_search(request):
+def search(request):
     posts = ''
     query = request.GET.get('q', None)
-    post_count = 0
+    # post_count = 0
     if query:
-        posts = Post.objects.filter(Q(title__icontains=query) | Q(body__icontains=query))
-        post_count = posts.count()
+        posts = Post.objects.filter(title__icontains=query)
+        # posts = Post.objects.filter(Q(title__icontains=query) | Q(body__icontains=query))
+        # post_count = posts.count()
     context = {
         'posts': posts,
         'query': query,
-        'post_count': post_count,
     }
 
     return render(request,
                   'search.html', context)
+
+
+def error_500(request):
+    return render(request, "500.html")
+
+
+def error_404(request, exception):
+    return render(request, "404.html")

@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}Page Not Found{% endblock title %} 
+
+{% block content %} 
+
+<!-- start error-section error-layout-1 -->
+<div class="error-section error-layout-1 section-padding-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="error-area-style-1 text-center">
+                    <div class="item-content">
+                        <h2 class="title">
+                            Oops... Page Not Found!
+                        </h2>
+                        <p>
+                            The page you are looking for might have been removed, had its name changed or is temporarily unavailable.
+                        </p>
+                    </div>
+                    <div class="btn-wrap">
+                        <a href="/" class="rt-btn-primary ">Back To Home </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %} 

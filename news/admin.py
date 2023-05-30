@@ -1,5 +1,10 @@
 from django.contrib import admin
 from django.http import HttpResponseRedirect
+from django.contrib.flatpages.admin import FlatPageAdmin
+from django.contrib.flatpages.models import FlatPage
+from django.db import models
+from ckeditor.widgets import CKEditorWidget
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 from .models import Category, Post
 
@@ -36,3 +41,12 @@ class PostAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
+
+
+class FlatPageCustom(FlatPageAdmin):
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorUploadingWidget}
+    }
+
+admin.site.unregister(FlatPage)
+admin.site.register(FlatPage, FlatPageCustom)
