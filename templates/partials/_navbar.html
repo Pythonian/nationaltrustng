@@ -1,35 +1,3 @@
-<style>
-    .nav-scroller {
-    position:relative;
-    z-index:2;
-    height:2.75rem;
-    overflow-y:hidden; }
-    
-.nav-scroller .nav {
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
-    -ms-flex-wrap:nowrap;
-    flex-wrap:nowrap;
-    padding-bottom:1rem;
-    margin-top:-1px;
-    overflow-x:auto;
-    white-space:nowrap;
-    -webkit-overflow-scrolling:touch; }
-
-.nav-scroller .nav a {
-    color:#fff!important }
-
-.nav-scroller .nav a:hover {
-    color:firebrick !important }
-
-.flex-auto{
-    -webkit-box-flex:0;
-    -ms-flex:0 0 auto;
-    flex:0 0 auto; }
-
-</style>
-
 <!-- Header Main -->
 <div class="header-main header-main-style-5 navbar-wrap text-white" id="navbar-wrap" style="background-color:firebrick;">
     <div class="container">
@@ -64,7 +32,7 @@
             </div>
         </div>
 
-        <div class="row d-none d-xl-block">
+        <!-- <div class="row d-none d-xl-block">
             <div class="header-menu-bars d-flex align-items-center">
 
                 <div class="main-menu">
@@ -79,16 +47,7 @@
                     </nav>
                 </div>
             </div>
-        </div>
-
-        <div class="nav-scroller py-1 mb-2 d-xl-none">
-            <nav class="nav d-flex justify-content-between">
-                {% for c in categories %}
-                <a class="p-2 text-decoration-none" href="{{ c.get_absolute_url }}">{{ c.title }}</a>
-                {% endfor %}
-                <a class="py-2 ps-2 text-decoration-none" href="/category/editorial/">Editorial</a>
-            </nav>
-        </div>
+        </div> -->
     </div>
 </div>
 

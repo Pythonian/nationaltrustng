@@ -147,8 +147,7 @@
 
             <div class="col-xl-3 col-md-8 mx-auto">
                 <div class="rt-sidebar">
-
-                    <div class="sidebar-wrap">
+                    <div class="mb-5">
                         <h2 class="rt-section-heading style-2 mb-3">
                             <span class="rt-section-text">Interview</span>
                             <span class="rt-section-dot"></span>
@@ -156,15 +155,20 @@
                         </h2>
                         <div class="video-box-style-1 video-box">
                             {% include 'partials/_video_featured.html' %}
-                    
-                            <div class="video-content">
-                                <ul class="video-item-list">
-                                    {% include 'partials/_video_item_list.html' %}
-                                    {% include 'partials/_video_item_list.html' %}
-                                    {% include 'partials/_video_item_list.html' %}
-                                    {% include 'partials/_video_item_list.html' %}
-                                </ul>
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <h2 class="rt-section-heading style-2 mb-3">
+                            <span class="rt-section-text">Popular News</span>
+                            <span class="rt-section-dot"></span>
+                            <span class="rt-section-line"></span>
+                        </h2>
+                        <div class="row rt-gutter-10">
+                            {% for post in popular_news %}
+                            <div class="col-12">
+                                {% include 'partials/_popular_news.html' %}
                             </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

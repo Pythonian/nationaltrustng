@@ -19,6 +19,7 @@ def home(request):
     latest_entertainment = news.filter(category__title='Entertainment')[:4]
     latest_security = news.filter(category__title='Security')[:4]
     latest_editorial = news.filter(category__title='Editorial')[:1]
+    popular_news = Post.objects.order_by('-page_views')[:4]
 
     template = 'home.html'
     context = {
@@ -35,6 +36,7 @@ def home(request):
         'latest_entertainment': latest_entertainment,
         'latest_security': latest_security,
         'latest_editorial': latest_editorial,
+        'popular_news': popular_news,
     }
 
     return render(request, template, context)
