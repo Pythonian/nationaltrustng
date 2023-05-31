@@ -6,6 +6,22 @@ from django.utils.html import strip_tags
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 
+def get_youtube_thumbnail_url(url):
+    video_id = extract_youtube_video_id(url)
+    thumbnail_url = f"https://img.youtube.com/vi/{video_id}/maxresdefault.jpg"
+    return thumbnail_url
+
+def extract_youtube_video_id(url):
+    video_id = None
+    # Regular expression pattern to extract the video ID from various YouTube URL formats
+    pattern = r"(?:youtube(?:-nocookie)?\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?|shorts)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})"
+    match = re.search(pattern, url)
+    if match:
+        video_id = match.group(1)
+
+    return video_id
+
+
 def mk_paginator(request, items, num_items):
     """
     Function to paginate querysets.

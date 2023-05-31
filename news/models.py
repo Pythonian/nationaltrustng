@@ -1,11 +1,9 @@
-import datetime
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.text import slugify
 from imagekit.models import ImageSpecField
 from pilkit.processors import ResizeToFill
-from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.utils.html import strip_tags
 from django.core.validators import MinLengthValidator
@@ -78,13 +76,6 @@ class Post(models.Model):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
-    def get_page_views_last_week(self):
-        """Calculates the number of page views for a post in the last 7 days"""
-        cutoff = timezone.now() - timezone.timedelta(days=7)
-        # count the number of page views that occured after the cutoff date
-        views = self.post.filter(created__gte=cutoff).count()
-        return views
-
     def get_absolute_url(self):
         return reverse('news:post',
                        args=[self.slug])
@@ -112,3 +103,18 @@ class Post(models.Model):
     @property
     def word_count(self):
         return len(strip_tags(self.body).split())
+
+
+class Interview(models.Model):
+    title = models.CharField(max_length=200)
+    youtube_link = models.URLField()
+    description = models.TextField(blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        get_latest_by = 'created'
+
+    def __str__(self):
+        return self.title
+    

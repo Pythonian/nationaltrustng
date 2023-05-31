@@ -1,8 +1,10 @@
-<div class="rt-post post-md style-8">
+<div class="rt-post post-md style-8" style="position: relative;">
     <div class="post-img">
         <a href="{{ post.get_absolute_url }}">
             <img src="{{ post.image_thumbnail.url|default:post.image.url }}" alt="{{ post.image_caption }}" width="551" height="430">
         </a>
+    </div>
+    <div class="position-absolute text-start top-0 w-100 p-2"> <span class="badge p-2 bg-danger">{{ post.category }}</span>
     </div>
     <div class="post-content">
         <h4 class="post-title">

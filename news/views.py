@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.db.models import Count, Q
-from .models import Post, Category
+from .models import Post, Category, Interview
 from .utils import mk_paginator
 
 
@@ -20,6 +20,7 @@ def home(request):
     latest_security = news.filter(category__title='Security')[:4]
     latest_editorial = news.filter(category__title='Editorial')[:1]
     popular_news = Post.objects.order_by('-page_views')[:4]
+    interview = Interview.objects.latest()
 
     template = 'home.html'
     context = {
@@ -37,6 +38,7 @@ def home(request):
         'latest_security': latest_security,
         'latest_editorial': latest_editorial,
         'popular_news': popular_news,
+        'interview': interview,
     }
 
     return render(request, template, context)
@@ -60,10 +62,28 @@ def post(request, slug):
                    'similar_posts': similar_posts})
 
 
+def archive(request):
+    news = Post.objects.all()
+    template = 'archive.html'
+    context = {'news': news}
+
+    return render(request, template, context)
+
+
 def contact(request):
 
     template = 'contact.html'
     context = {}
+
+    return render(request, template, context)
+
+
+def interviews(request):
+
+    template = 'interviews.html'
+    context = {
+        'interviews': Interview.objects.all(),
+    }
 
     return render(request, template, context)
 

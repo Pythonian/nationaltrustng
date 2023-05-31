@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% load youtube_filters %}
+{% block title %}Interviews{% endblock %}
+
+{% block content %}
+
+<div class="banner inner-banner">
+    <div class="container">
+        <nav class="rt-breadcrumb-wrap" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <span class="rt-text-truncate">
+                        Interviews
+                    </span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<section class="rt-sidebar-section-layout-1">
+    <div class="container">
+        <div class="row gutter-40">
+            <div class="col-xl-9">
+                <div class="row">
+                    {% for interview in interviews %}
+                    {% with youtube_url=interview.youtube_link %}
+                    <div class="col-md-6">
+                        <div class="rt-post-overlay rt-post-overlay-md layout-3">
+                            <div class="post-img">
+                                <a href="javascript:void(0)" class="img-link">
+                                    <img src="{{ youtube_url|youtube_thumbnail }}" alt="{{ interview.title }}" width="1040" height="696">
+                                </a>
+                                <a href="{{ interview.youtube_link }}"
+                                    class="play-btn play-btn-gray-rectangle rt-play-over-right-bottom">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <h3 class="post-title text-dark">
+                                    {{ interview.title }}
+                                </h3>
+                                <div class="post-meta">
+                                    <ul>
+                                        <li>
+                                            <span class="rt-meta">
+                                                By National Trust
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="rt-meta">
+                                                <i class="far fa-calendar-alt icon"></i>
+                                                {{ interview.created|date:"F j, Y" }}
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endwith %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-8 mx-auto">
+                <div class="rt-sidebar">
+
+                    <div class="mb-5">
+                        <div class="search-box">
+                            {% include 'partials/_search.html' %}
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h2 class="rt-section-heading style-2 mb-3">
+                            <span class="rt-section-text">Editor-in-Chief</span>
+                            <span class="rt-section-dot"></span>
+                            <span class="rt-section-line"></span>
+                        </h2>
+                        {% include 'partials/_editor_profile_card.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

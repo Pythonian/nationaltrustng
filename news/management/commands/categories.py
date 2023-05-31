@@ -10,7 +10,6 @@ categories = [
     'Opinion',
     'Personality',
     'Sports',
-    'Interview',
     'Economy',
     'Entertainment',
     'Security',
