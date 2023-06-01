@@ -2,8 +2,7 @@ from pathlib import Path
 
 from django.contrib.messages import constants as messages
 from decouple import Csv, config
-from dotenv import load_dotenv
-load_dotenv()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -67,26 +66,28 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 SITE_ID = 1
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-DATABASES = {
-    'default': {
-        'ENGINE': config('DB_ENGINE'),
-        # 'NAME': config('DB_NAME', BASE_DIR / 'db.sqlite3'),
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
-        # 'OPTIONS': {  
-        #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
-        # }
+
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': config('DB_ENGINE'),
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST'),
+            'PORT': config('DB_PORT'),
+            'OPTIONS': {  
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
+            }
+        }
+    }
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -128,18 +129,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
-
-# CKEDITOR_CONFIGS = {
-#     'default': {
-#         'toolbar': 'Custom',
-#         'toolbar_Custom': [
-#             ['Bold', 'Italic', 'Underline'],
-#             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-#             ['Link', 'Unlink'],
-#             ['RemoveFormat', 'Source']
-#         ]
-#     }
-# }
 
 
 MESSAGE_TAGS = {
