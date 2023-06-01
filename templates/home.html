@@ -153,9 +153,13 @@
                             <span class="rt-section-dot"></span>
                             <span class="rt-section-line"></span>
                         </h2>
+                        {% if interview is not None %}
                         <div class="video-box-style-1 video-box">
                             {% include 'partials/_video_featured.html' %}
                         </div>
+                        {% else %} 
+                        <p class="my-5">No Interview Yet.</p>
+                        {% endif %}
                     </div>
                     <div class="mb-5">
                         <h2 class="rt-section-heading style-2 mb-3">

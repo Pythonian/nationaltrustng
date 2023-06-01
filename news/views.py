@@ -20,7 +20,10 @@ def home(request):
     latest_security = news.filter(category__title='Security')[:4]
     latest_editorial = news.filter(category__title='Editorial')[:1]
     popular_news = Post.objects.order_by('-page_views')[:4]
-    interview = Interview.objects.latest()
+    try:
+        interview = Interview.objects.latest()
+    except Interview.DoesNotExist:
+        interview = None
 
     template = 'home.html'
     context = {

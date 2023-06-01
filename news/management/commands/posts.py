@@ -2,7 +2,6 @@ import random
 import requests
 from django.core.management.base import BaseCommand
 from django.utils.text import slugify
-from django.contrib.auth.models import User
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 from faker import Faker
@@ -42,7 +41,6 @@ class Command(BaseCommand):
         for _ in range(total):
             title = fake.sentence()
             slug = slugify(title)
-            author = User.objects.get(id=1)
             category = random.choice(categories)
             body = text
             page_views = fake.random_int(min=1, max=1000)
@@ -83,7 +81,6 @@ class Command(BaseCommand):
             Post.objects.create(
                 title=title,
                 slug=slug,
-                author=author,
                 category=category,
                 body=body,
                 page_views=page_views,
