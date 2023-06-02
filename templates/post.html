@@ -2,9 +2,16 @@
 
 {% block title %}{{ post.title }} | {{ post.category.title }}{% endblock %} 
 
+{% block open_graph %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@NationalTrusts">
+<meta name="twitter:title" content="{{ post.title }}">
+<meta name="twitter:description" content="{{ post.body|truncatechars:130|safe }}">
+<meta name="twitter:image" content="{{ post.image.url }}">
+{% endblock open_graph %}
+
 {% block content %} 
 
-<!-- Start inner page Banner -->
 <div class="banner inner-banner">
     <div class="container">
         <nav class="rt-breadcrumb-wrap" aria-label="breadcrumb">
@@ -90,22 +97,12 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <!-- <div class="right-area">
-                                    <ul class="social-share-style-1 layout-2 mb--10">
-                                        <li>
-                                            <a target="_blank" href="https://www.facebook.com/">
-                                                <i class="social-icon fas fa-envelope"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div> -->
                             </div>
                         </div>
-                        <!-- end post-header -->
 
                         <!-- strat post img -->
                         <figure class="post-img">
-                            <img src="{{ post.image.url }}" alt="post-img" width="960" height="520">
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}" width="960" height="520">
                         </figure>
                         <!-- end post-img -->
 
@@ -117,43 +114,6 @@
                         <div class="my-5">
                             {# include 'partials/_ad_horizontal.html' #}
                         </div>
-
-                        <!-- start author box -->
-                        <!-- <div class="author-box-style-1 mb-5">
-                            <div class="author-img">
-                                <img src="https://placehold.it/170" alt="author-img_1" width="170" height="170">
-                            </div>
-                            <div class="author-content">
-                                <h3 class="author-name">Seyi Pythonian</h3>
-                                <span class="author-role">Content Creator</span>
-                                <p class="user-desc">
-                                    Tthe leap into electronic typesetting, remaining essentiallyuncha
-                                    opularisedthe
-                                    with
-                                    the release of Letrasetsheets containingthe leap electrtypesetting remaining
-                                    essentially unchanged.
-                                </p>
-                                <ul class="social-style-5">
-
-                                    <li>
-                                        <a target="_blank" href="https://www.facebook.com/">
-                                            <i class="social-icon fab fa-facebook-f"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a target="_blank" href="https://twitter.com/">
-                                            <i class="social-icon fab fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a target="_blank" href="https://www.instagram.com/">
-                                            <i class="fab fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> -->
-                        <!-- end author box -->
 
                         {% if post.get_previous_by_created or post.get_next_by_created %}
                         <div class="post-pagination-box mb-4">
@@ -208,57 +168,6 @@
                             </div>
                         </div>
                         {% endif %}
-
-                        <!-- start blog-post-comment -->
-                        <!-- <div class="blog-post-comment mb--50">
-                            <form action="#" class="rt-contact-form comments-form-style-1">
-                                <div class="row">
-                                    <div class="col-xl-6">
-                                        <div class="rt-form-group">
-                                            <label for="name">Your Name *</label>
-                                            <input type="text" name="name" id="name" class="form-control"
-                                                data-error="Name field is required" required>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <div class="rt-form-group">
-                                            <label for="email">E-mail *</label>
-                                            <input type="text" name="email" id="email" class="form-control"
-                                                data-error="Email field is required" required>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="rt-form-group">
-                                            <label for="comment">Comments *</label>
-                                            <textarea name="comment" id="comment" class="form-control text-area"
-                                                data-error="Comment field is required" required></textarea>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="rt-form-group">
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="comment-form-check1">
-                                                <label class="form-check-label" for="comment-form-check1">
-                                                    Save my name, email, and website in this browser for the next time I
-                                                    comment.
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="submit-btn">
-                                            Post Comment
-                                        </button>
-                                    </div>
-                                    <div class="form-response"></div>
-                                </div>
-                            </form>
-                        </div> -->
-                        <!-- end blog-post-comment -->
                     </div>
                 </div>
             </div>

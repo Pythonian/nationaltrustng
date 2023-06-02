@@ -3,11 +3,10 @@ from django.http import HttpResponseRedirect
 from django.contrib.flatpages.admin import FlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from django.db import models
-from ckeditor.widgets import CKEditorWidget
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 from .models import Category, Post, Interview
-
+from .twitter import post_tweet
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -36,6 +35,13 @@ class PostAdmin(admin.ModelAdmin):
             redirect_url = post.get_absolute_url()
             response = HttpResponseRedirect(redirect_url)
         return response
+    
+    def save_model(self, request, obj, form, change):
+        super().save_model(request, obj, form, change)
+
+        # Post tweet when a new blog post is created
+        if not change:
+            post_tweet(obj)
 
 
 @admin.register(Category)

@@ -9,13 +9,8 @@ from PIL import Image
 from io import BytesIO
 from news.models import Category, Post
 
-
-#                     img_temp = NamedTemporaryFile(delete=True)
-#                     img_temp.write(image_response.content)
-#                     img_temp.flush()
-
-
 fake = Faker()
+
 
 class Command(BaseCommand):
     help = 'Populate the database with sample data for the Post model'

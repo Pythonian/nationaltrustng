@@ -33,6 +33,8 @@
                     <div class="post-list-style-4">
                         {% for post in posts %}
                         {% include 'partials/_post_list_1.html' %}
+                        {% empty %} 
+                        <p class="my-5">There are no posts yet under this category.</p>
                         {% endfor %}
                     </div>
 
