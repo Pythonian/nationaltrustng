@@ -2904,7 +2904,6 @@ Modal
 // pre-loader
 =====================================*/
 #preloader {
-  background: url("../../media/neeon.gif") rgba(255, 255, 255, 0.99) no-repeat scroll center center;
   height: 100%;
   left: 0;
   overflow: visible;
@@ -8464,7 +8463,6 @@ video {
   border-radius: 4px;
 }
 .post-banner-style-1::before {
-  background-image: url("../../media/gallery/post-banner_1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
