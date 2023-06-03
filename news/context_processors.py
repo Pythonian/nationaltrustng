@@ -6,7 +6,7 @@ def categories(request):
         'categories': Category.objects.all()[:12]
         }
 
-def latest_news(request):
+def breaking_news(request):
     return {
-        'latest_news': Post.objects.all()[:5]
+        'breaking_news': Post.objects.all()[:5]
     }

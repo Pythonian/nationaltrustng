@@ -56,7 +56,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'news.context_processors.categories',
-                'news.context_processors.latest_news',
+                'news.context_processors.breaking_news',
             ],
         },
     },
