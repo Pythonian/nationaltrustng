@@ -8,4 +8,5 @@ facebook-sdk==3.1.0
 Faker==18.9.0
 Pillow==9.5.0
 python-decouple==3.8
+sentry-sdk==1.25.0
 tweepy==4.14.0
