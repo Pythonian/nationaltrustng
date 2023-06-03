@@ -5,9 +5,11 @@
 {% block open_graph %}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@NationalTrusts">
-<meta name="twitter:title" content="{{ post.title }}">
-<meta name="twitter:description" content="{{ post.body|truncatechars:130|safe }}">
-<meta name="twitter:image" content="{{ post.image.url }}">
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ post.title }}" />
+<meta property="og:description" content="{{ post.body|truncatechars:200 }}" />
+<meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ post.get_absolute_url }}" />
+<meta property="og:image" content="https://nationaltrustng.s3.amazonaws.com{{ post.image.url }}" />
 {% endblock open_graph %}
 
 {% block content %} 
