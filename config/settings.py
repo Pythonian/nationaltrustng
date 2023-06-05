@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'imagekit',
     'django_cleanup.apps.CleanupConfig',
     'storages',
+    'taggit',
 ]
 
 MIDDLEWARE = [

@@ -95,7 +95,7 @@
     slidesPerView: 1,
     loop: true,
     slideToClickedSlide: true,
-    direction: "vertical",
+    direction: "horizontal",
     autoplay: {
       delay: 4000,
     },

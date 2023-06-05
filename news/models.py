@@ -9,6 +9,7 @@ from django.utils.html import strip_tags
 from django.core.validators import MinLengthValidator
 from django.utils.translation import gettext_lazy as _
 from django.contrib.sitemaps import ping_google
+from taggit.managers import TaggableManager
 from .utils import get_read_time
 
 content_validator = MinLengthValidator(
@@ -58,6 +59,7 @@ class Post(models.Model):
     read_time = models.PositiveIntegerField(
         _('read time'), default=0,
         help_text='Estimated time taken to read the post.')
+    tags = TaggableManager()
 
 
     class Meta:
