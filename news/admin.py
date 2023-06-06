@@ -5,7 +5,7 @@ from django.contrib.flatpages.models import FlatPage
 from django.db import models
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
-from .models import Category, Post, Interview
+from .models import Category, Post
 from .twitter import post_tweet
 
 @admin.register(Post)
@@ -46,10 +46,6 @@ class PostAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
-
-@admin.register(Interview)
-class InterviewAdmin(admin.ModelAdmin):
-    pass
 
 class FlatPageCustom(FlatPageAdmin):
     formfield_overrides = {

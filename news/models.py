@@ -105,18 +105,3 @@ class Post(models.Model):
     @property
     def word_count(self):
         return len(strip_tags(self.body).split())
-
-
-class Interview(models.Model):
-    title = models.CharField(max_length=200)
-    youtube_link = models.URLField()
-    description = models.TextField(blank=True, null=True)
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        get_latest_by = 'created'
-
-    def __str__(self):
-        return self.title
-    

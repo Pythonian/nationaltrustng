@@ -50,9 +50,8 @@
                 <nav class="nav d-flex justify-content-between">
                     <a class="py-2 pe-4 text-decoration-none {% url 'news:home' as home_url %}{% if request.get_full_path == home_url %}active{% endif %}" href="{{ home_url }}">Home</a>
                     {% for c in categories %}
-                    <a class="py-2 pe-4 text-decoration-none" href="{{ c.get_absolute_url }}">{{ c.title }}</a>
+                    <a class="py-2 {% if forloop.last %}ps-2{% else %}pe-4{% endif %} text-decoration-none" href="{{ c.get_absolute_url }}">{{ c.title }}</a>
                     {% endfor %}
-                    <a class="py-2 ps-2 text-decoration-none" href="{% url 'news:interviews' %}">Interviews</a>
                 </nav>
             </div>
         </div>

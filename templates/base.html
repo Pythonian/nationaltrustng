@@ -6,10 +6,11 @@
 <head>
     <!-- Meta Data -->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock title %} | National Trust Nigeria</title>
-    {% block open_graph %}{% endblock open_graph %}
+    {% block open_graph %}
+    <link rel="canonical" href="https://www.nationaltrustng.com/" />    
+    {% endblock open_graph %}
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">

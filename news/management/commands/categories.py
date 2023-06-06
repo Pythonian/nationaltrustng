@@ -16,6 +16,7 @@ categories = [
     'Africa',
     'World',
     'Editorial'
+    'Interview',
 ]
 
 class Command(BaseCommand):

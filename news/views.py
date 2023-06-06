@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
-from django.db.models import Count, Q
-from .models import Post, Category, Interview
+from django.db.models import Count
+from .models import Post, Category
 from .utils import mk_paginator
 
 
@@ -20,10 +20,7 @@ def home(request):
     latest_security = news.filter(category__title='Security')[:4]
     latest_editorial = news.filter(category__title='Editorial')[:1]
     popular_news = Post.objects.order_by('-page_views')[:4]
-    try:
-        interview = Interview.objects.latest()
-    except Interview.DoesNotExist:
-        interview = None
+    latest_interview = news.filter(category__title='Interview')[:1]
 
     template = 'home.html'
     context = {
@@ -41,7 +38,7 @@ def home(request):
         'latest_security': latest_security,
         'latest_editorial': latest_editorial,
         'popular_news': popular_news,
-        'interview': interview,
+        'latest_interview': latest_interview,
     }
 
     return render(request, template, context)
@@ -81,16 +78,6 @@ def contact(request):
     return render(request, template, context)
 
 
-def interviews(request):
-
-    template = 'interviews.html'
-    context = {
-        'interviews': Interview.objects.all(),
-    }
-
-    return render(request, template, context)
-
-
 def category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     posts = category.posts.all()
@@ -116,11 +103,8 @@ def category(request, slug):
 def search(request):
     posts = ''
     query = request.GET.get('q', None)
-    # post_count = 0
     if query:
         posts = Post.objects.filter(title__icontains=query)
-        # posts = Post.objects.filter(Q(title__icontains=query) | Q(body__icontains=query))
-        # post_count = posts.count()
     context = {
         'posts': posts,
         'query': query,

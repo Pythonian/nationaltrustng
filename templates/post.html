@@ -10,6 +10,7 @@
 <meta property="og:description" content="{{ post.body|truncatechars:200|safe }}" />
 <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ post.get_absolute_url }}" />
 <meta property="og:image" content="{{ post.image.url }}" />
+<link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ post.get_absolute_url }}" />
 {% endblock open_graph %}
 
 {% block content %} 

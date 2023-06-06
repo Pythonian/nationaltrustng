@@ -157,7 +157,7 @@
                             <span class="rt-section-dot"></span>
                             <span class="rt-section-line"></span>
                         </h2>
-                        {% if interview is not None %}
+                        {% if interview in latest_interview %}
                         <div class="video-box-style-1 video-box">
                             {% include 'partials/_video_featured.html' %}
                         </div>
@@ -176,6 +176,8 @@
                             <div class="col-12">
                                 {% include 'partials/_popular_news.html' %}
                             </div>
+                            {% empty %} 
+                            <p class="text-center mt-5">No News Yet</p>
                             {% endfor %}
                         </div>
                     </div>
