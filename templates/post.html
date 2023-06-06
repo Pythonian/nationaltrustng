@@ -155,7 +155,7 @@
                         {% endif %}
 
                         {% if post.get_previous_by_created or post.get_next_by_created %}
-                        <div class="post-pagination-box mb-4">
+                        <div class="post-pagination-box mb-5">
 
                             <div class="row gutter-30">
                                 {% if post.get_previous_by_created %}
@@ -211,13 +211,13 @@
                         <div id="disqus_thread"></div>
                         <script>
                             var disqus_config = function () {
-                                this.page.url = '{{ request.build_absolute_uri }}';
+                                this.page.url = 'https://nationaltrustng.com{{ post.get_absolute_url }}';
                                 this.page.identifier = '{{ post.id }}';
                             };
                             
                             (function () { // DON'T EDIT BELOW THIS LINE
                                 var d = document, s = d.createElement('script');
-                                s.src = 'https://nationaltrustng.disqus.com/embed.js';
+                                s.src = 'https://https-www-nationaltrustng-com.disqus.com/embed.js';
                                 s.setAttribute('data-timestamp', +new Date());
                                 (d.head || d.body).appendChild(s);
                             })();
