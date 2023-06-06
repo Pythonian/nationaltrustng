@@ -1,8 +1,9 @@
+{% load static %}
 <div class="item">
     <div class="item-content" style="position: relative;">
         <div class="post-img me-0 mb-2">
             <a href="{{ post.get_absolute_url }}">
-                <img src="{{ post.image_thumbnail.url|default:post.image.url }}" alt="post" width="551" height="431">
+                <img src="{% if post.image %}{{ post.image_thumbnail.url }}{% elif post.image_link %}{{ post.image_link }}{% else %}{% static 'img/post.png' %}{% endif %}" alt="post" width="551" height="431">
             </a>
         </div>
         <div class="position-absolute text-start top-0 w-100 p-2"> <span class="badge p-2 bg-danger">{{ post.category }}</span> </div>

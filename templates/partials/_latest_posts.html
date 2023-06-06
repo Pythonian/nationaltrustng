@@ -1,8 +1,9 @@
+{% load static %}
 <div class="featured-middle-post-style-5">
     <div class="rt-post post-md style-5 grid-meta" style="position: relative;">
         <div class="post-img">
             <a href="{{ post.get_absolute_url }}">
-                <img src="{{ post.image_thumbnail.url|default:post.image.url }}" alt="{{ post.image_caption }}" width="960" height="491">
+                <img src="{% if post.image %}{{ post.image_thumbnail.url }}{% elif post.image_link %}{{ post.image_link }}{% else %}{% static 'img/post.png' %}{% endif %}" alt="{{ post.image_caption }}" width="960" height="491">
             </a>
         </div>
         <div class="position-absolute text-start top-0 w-100 p-2"> <span class="badge p-2 bg-danger">{{ post.category }}</span>

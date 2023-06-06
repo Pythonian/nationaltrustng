@@ -46,10 +46,12 @@ class Post(models.Model):
                                  related_name='posts')
     body = RichTextUploadingField(_('body'), validators=[content_validator])
     image = models.ImageField(upload_to='posts_images',
-                              verbose_name=_('image'), default='post.png')
+                              verbose_name=_('image'),
+                              blank=True, null=True)
     image_thumbnail = ImageSpecField(source='image',
                                      processors=[ResizeToFill(960, 520)],
                                      format='JPEG', options={'quality': 60})
+    image_link = models.URLField(blank=True, null=True, help_text='Enter Image URL here.')
     image_caption = models.CharField(_('image caption'),
                                      blank=True, max_length=50)
     created = models.DateTimeField(default=timezone.now)
