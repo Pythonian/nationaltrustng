@@ -16,6 +16,16 @@
 
 {% block content %} 
 
+{% if messages %}
+{% for message in messages %}
+<div class="m-0 rounded-0 alert alert-{{ message.tags }}" role="alert">
+    <div class="container">
+        {{ message }}
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+
 <div class="banner inner-banner">
     <div class="container">
         <nav class="rt-breadcrumb-wrap" aria-label="breadcrumb">
@@ -75,6 +85,14 @@
                                             <i class="fas fa-eye icon"></i>
                                             {{ post.page_views }} View{{ post.page_views|pluralize }}
                                         </span>
+                                    </li>
+                                    <li>
+                                        {% with comments.count as total_comments %}
+                                        <a class="rt-meta" href="#comments">
+                                            <i class="fas fa-comment icon"></i>
+                                            {{ total_comments }} comment{{ total_comments|pluralize }}
+                                        </a>
+                                        {% endwith %}
                                     </li>
                                 </ul>
                             </div>
@@ -208,21 +226,50 @@
                         </div>
                         {% endif %}
 
-                        <div id="disqus_thread"></div>
-                        <script>
-                            var disqus_config = function () {
-                                this.page.url = 'https://nationaltrustng.com{{ post.get_absolute_url }}';
-                                this.page.identifier = '{{ post.id }}';
-                            };
-                            
-                            (function () { // DON'T EDIT BELOW THIS LINE
-                                var d = document, s = d.createElement('script');
-                                s.src = 'https://https-www-nationaltrustng-com.disqus.com/embed.js';
-                                s.setAttribute('data-timestamp', +new Date());
-                                (d.head || d.body).appendChild(s);
-                            })();
-                        </script>
-                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                        <div class="blog-post-comment mb-4">
+                            <form method="post" action="." class="comments-form-style-1">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="rt-form-group">
+                                            <label for="id_name">Your Name *</label>
+                                            {{ form.name }}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="rt-form-group">
+                                            <label for="id_email">E-mail *</label>
+                                            {{ form.email }}
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="rt-form-group">
+                                            <label for="id_comment">Comment *</label>
+                                            {{ form.body }}
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="submit-btn">
+                                            Post Comment
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <span id="comments"></span>
+                        {% for comment in comments %}
+                        <div class="author-box-style-1 mb-3">
+                            <div class="author-content">
+                                <h3 class="author-name">{{ comment.name }}</h3>
+                                <span class="author-role">Posted: {{ comment.created }}</span>
+                                <p class="user-desc">
+                                    {{ comment.body|linebreaks }}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+
                     </div>
                 </div>
             </div>

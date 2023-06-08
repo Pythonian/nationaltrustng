@@ -1,6 +1,8 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
+from django.contrib import messages
 from django.db.models import Count
-from .models import Post, Category
+from .models import Post, Category, Comment
+from .forms import CommentForm
 from .utils import mk_paginator
 
 
@@ -48,6 +50,7 @@ def post(request, slug):
     
     post = get_object_or_404(Post, slug=slug)
     similar_posts = Post.objects.filter(category=post.category.id).exclude(id=post.id)[:4]
+    comments = post.comments.filter(is_public=True)
 
     # Create a session key for a visitor
     session_key = 'viewed_post_{}'.format(post.pk)
@@ -56,10 +59,25 @@ def post(request, slug):
         post.save()
         request.session[session_key] = True
 
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            messages.success(request, 'Your comment was posted successfully.')
+            return redirect(post)
+        else:
+            messages.warning(request, 'An error occured while trying to post comment.')
+    else:
+        form = CommentForm()
+
     return render(request,
                   'post.html',
                   {'post': post,
-                   'similar_posts': similar_posts})
+                   'similar_posts': similar_posts,
+                   'form': form,
+                   'comments': comments})
 
 
 def archive(request):

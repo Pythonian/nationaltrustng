@@ -107,3 +107,23 @@ class Post(models.Model):
     @property
     def word_count(self):
         return len(strip_tags(self.body).split())
+
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    is_public = models.BooleanField(default=True, help_text='Uncheck this if you do not want this comment to appear on the site.')
+
+    class Meta:
+        ordering = ['-created']
+        indexes = [
+            models.Index(fields=['created']),
+        ]
+
+    def __str__(self):
+        return f'Comment by {self.name} on {self.post}'
+    
