@@ -16,7 +16,7 @@
                 </a>
             </h3>
             <p>
-                {{ post.body|truncatechars:280|safe }}
+                {{ post.body|truncatechars:280|striptags }}
             </p>
             <div class="post-meta">
                 <ul>

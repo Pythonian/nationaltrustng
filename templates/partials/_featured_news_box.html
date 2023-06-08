@@ -30,7 +30,7 @@
                         </ul>
                     </div>
                     <p class="mb-0">
-                        {{ post.body|truncatechars:130|safe }}
+                        {{ post.body|truncatechars:130|striptags }}
                     </p>
                 </li>
             </ul>

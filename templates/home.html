@@ -157,13 +157,13 @@
                             <span class="rt-section-dot"></span>
                             <span class="rt-section-line"></span>
                         </h2>
-                        {% if interview in latest_interview %}
+                        {% for post in latest_interview %}
                         <div class="video-box-style-1 video-box">
-                            {% include 'partials/_video_featured.html' %}
+                            {% include 'partials/_featured_news_box.html' %}
                         </div>
-                        {% else %} 
+                        {% empty %} 
                         <p class="my-5">No Interview Yet.</p>
-                        {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="mb-5">
                         <h2 class="rt-section-heading style-2 mb-3">
