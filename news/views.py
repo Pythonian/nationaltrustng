@@ -15,7 +15,7 @@ def home(request):
     latest_features = news.filter(category__title='Features')[:7]
     latest_opinions = news.filter(category__title='Opinion')[:3]
     latest_sports = news.filter(category__title='Sports')[:4]
-    latest_personality = news.filter(category__title='Personality')[:6]
+    latest_personality = news.filter(category__title='Personality')[:4]
     latest_world = news.filter(category__title='World')[:8]
     latest_africa = news.filter(category__title='Africa')[:8]
     latest_economy = news.filter(category__title='Economy')[:4]
