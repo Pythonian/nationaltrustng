@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}{{ tag.name }} | Tag{% endblock %}
+
+{% block content %}
+
+<div class="banner inner-banner">
+    <div class="container">
+        <nav class="rt-breadcrumb-wrap" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <span class="rt-text-truncate">
+                        {{ tag.name }}
+                    </span>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<section class="rt-sidebar-section-layout-1">
+    <div class="container">
+        <div class="row gutter-40">
+            <div class="col-xl-9">
+                <div class="rt-left-sidebar-sapcer-5">
+
+                    <div class="post-list-style-4">
+                        {% for post in posts %}
+                        {% include 'partials/_post_list_1.html' %}
+                        {% empty %}
+                        <p class="my-5">There are no posts yet under this tag.</p>
+                        {% endfor %}
+                    </div>
+
+                    {% include 'partials/_pagination.html' with page_obj=posts %}
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-8 mx-auto">
+                <div class="rt-sidebar">
+
+                    <div class="mb-5">
+                        <div class="search-box">
+                            {% include 'partials/_search.html' %}
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h2 class="rt-section-heading style-2 mb-3">
+                            <span class="rt-section-text">Editor-in-Chief</span>
+                            <span class="rt-section-dot"></span>
+                            <span class="rt-section-line"></span>
+                        </h2>
+                        {% include 'partials/_editor_profile_card.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

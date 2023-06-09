@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
 from django.db.models import Count
+from taggit.models import Tag
 from .models import Post, Category, Comment
 from .forms import CommentForm
 from .utils import mk_paginator
@@ -130,6 +131,20 @@ def search(request):
 
     return render(request,
                   'search.html', context)
+
+
+def tag(request, slug):
+    tag = get_object_or_404(Tag, slug=slug)
+    posts = Post.objects.filter(tags__in=[tag])
+    posts = mk_paginator(request, posts, 10)
+    
+    template = 'tag.html'
+    context = {
+        'tag': tag,
+        'posts': posts,
+    }
+
+    return render(request, template, context)
 
 
 def error_500(request):

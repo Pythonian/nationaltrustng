@@ -6,9 +6,13 @@
                 {{ post.title }}
             </a>
         </h4>
-        <span class="rt-meta">
+        <span class="rt-meta me-2">
             <i class="far fa-calendar-alt icon"></i>
             {{ post.created|date:"F j, Y" }}
+        </span>
+        <span class="rt-meta">
+            <i class="fas fa-eye icon"></i>
+            {{ post.page_views }}
         </span>
     </div>
 </div>

@@ -9,6 +9,7 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('archive/', views.archive, name='archive'),
     path('feed/', LatestPostsFeed(), name='post_feed'),
+    path('tag/<slug:slug>/', views.tag, name='tag'),    
     path('category/<slug:slug>/', views.category, name='category'),    
     path('post/<slug:slug>/', views.post, name='post'),
     path('', views.home, name='home'),

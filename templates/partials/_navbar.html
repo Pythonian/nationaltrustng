@@ -5,7 +5,7 @@
             <ul class="header-action-items d-sm-none pt-3">
                 <li class="rt-meta me-3">
                     <i class="far fa-calendar-alt icon"></i>
-                    <span class="currentDate text-dark"></span>
+                    <span class="text-dark">{% now "l, F j, Y" %}</span>
                 </li>
                 <li class="rt-meta">
                     <i class="fas fa-map-marker icon"></i>
@@ -17,7 +17,7 @@
                 <ul class="header-action-items d-none d-sm-block">
                     <li class="rt-meta">
                         <i class="far fa-calendar-alt icon"></i>
-                        <span class="currentDate text-dark"></span>
+                        <span class="text-dark">{% now "l, F j, Y" %}</span>
                     </li>
                 </ul>
                 
@@ -42,7 +42,7 @@
             <div class="offcanvas-header">
                 <div class="offcanvas-logo">
                     <a href="/">
-                        <h3 class="fw-bold" style="color:firebrick; font-family: 'Rowdies', cursive; font-size: 25px;">National Trust</h3>
+                        <h3 class="fw-bold text-primary" style="font-family: 'Rowdies', cursive; font-size: 25px;">National Trust</h3>
                     </a>
                 </div>
                 <div class="close-btn offcanvas-close">
