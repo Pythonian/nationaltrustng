@@ -107,7 +107,16 @@ class Post(models.Model):
     @property
     def word_count(self):
         return len(strip_tags(self.body).split())
+    
 
+class Image(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='galleries')
+    image = models.ImageField(upload_to='posts_images/extra', blank=True, null=True)
+    image_caption = models.CharField(_('image caption'),
+                                     blank=True, max_length=50)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')

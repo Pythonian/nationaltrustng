@@ -149,6 +149,20 @@
 
                         <div class="post-body">
                             {{ post.body|safe }}
+                            {% if post.galleries %}
+                            <div class="thumb-post-area mb-3">
+                                <div class="row gutter-24">
+                                    {% for img in post.galleries.all %}
+                                    <div class="col-lg-6">
+                                        <div class="item-img">
+                                            <img src="{% if img.image %}{{ img.image.url }}{% endif %}"
+                                                alt="{{ post.title }}" width="696" height="540">
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            {% endif %}
                         </div>
 
                         <!-- <div class="my-5">

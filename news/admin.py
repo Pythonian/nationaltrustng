@@ -5,12 +5,17 @@ from django.contrib.flatpages.models import FlatPage
 from django.db import models
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
-from .models import Category, Comment, Post
+from .models import Category, Comment, Post, Image
 from .twitter import post_tweet
 
 
 class CommentInline(admin.StackedInline):
     model = Comment
+    extra = 0
+
+
+class ImageInline(admin.TabularInline):
+    model = Image
     extra = 0
 
 @admin.register(Post)
@@ -21,7 +26,7 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'created'
     ordering = ['-created']
-    inlines = [CommentInline]
+    inlines = [ImageInline, CommentInline]
 
     def change_view(self, request, object_id, extra_context=None):
         """ Override the page admin is directed to after saving a post."""
