@@ -1,4 +1,40 @@
 {% load static %}
+<!-- <div class="rt-post-overlay 1rt-post-overlay-xl 1layout-1">
+    <div class="post-img">
+        <a href="{{ post.get_absolute_url }}" class="img-link">
+            <img src="{% if post.image %}{{ post.image_thumbnail.url }}{% elif post.image_link %}{{ post.image_link }}{% else %}{% static 'img/post.png' %}{% endif %}" alt="{{ post.image_caption|default:post.title }}" width="900" height="400" style="width: 900px; height: 400px;">
+        </a>
+    </div>
+    <div class="post-content">
+        <a href="{{ post.category.get_absolute_url }}" class="fashion">{{ post.category }}</a>
+        <h3 class="post-title bold-underline">
+            <a href="{{ post.get_absolute_url }}">
+                {{ post.title }}
+            </a>
+        </h3>
+        <div class="post-meta">
+            <ul>
+                <li>
+                    <span class="rt-meta">
+                        by National Trust
+                    </span>
+                </li>
+                <li>
+                    <span class="rt-meta">
+                        <i class="far fa-calendar-alt icon"></i>
+                        {{ post.created|date:"F j, Y" }}
+                    </span>
+                </li>
+                <li>
+                    <span class="rt-meta">
+                        <i class="fas fa-eye icon"></i>
+                        {{ post.page_views }}
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div> -->
 <div class="featured-middle-post-style-5">
     <div class="rt-post post-md style-5 grid-meta" style="position: relative;">
         <div class="post-img">
