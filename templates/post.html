@@ -64,31 +64,31 @@
                             <div class="post-meta">
                                 <ul>
                                     <li>
-                                        <span class="rt-meta">
+                                        <span class="rt-meta" style="color:#f7679d">
                                             by National Trust
                                         </span>
                                     </li>
                                     <li>
-                                        <span class="rt-meta">
+                                        <span class="rt-meta" style="color:#f7679d">
                                             <i class="far fa-calendar-alt icon"></i>
                                             {{ post.created|date:"F j, Y" }}
                                         </span>
                                     </li>
                                     <li>
-                                        <span class="rt-meta">
+                                        <span class="rt-meta" style="color:#f7679d">
                                             <i class="far fa-clock icon"></i>
                                             {{ post.read_time }} minute{{ post.read_time|pluralize }} read
                                         </span>
                                     </li>
                                     <li>
-                                        <span class="rt-meta">
+                                        <span class="rt-meta" style="color:#f7679d">
                                             <i class="fas fa-eye icon"></i>
                                             {{ post.page_views }} View{{ post.page_views|pluralize }}
                                         </span>
                                     </li>
                                     <li>
                                         {% with comments.count as total_comments %}
-                                        <a class="rt-meta" href="#comments">
+                                        <a class="rt-meta" style="color:#f7679d" href="#comments">
                                             <i class="fas fa-comment icon"></i>
                                             {{ total_comments }} comment{{ total_comments|pluralize }}
                                         </a>
@@ -194,14 +194,14 @@
                                 <div class="col-lg-6">
                                     <div class="next-prev-wrap">
                                         <div class="item-icon">
-                                            <a href="{{ post.get_previous_post.get_absolute_url }}">
+                                            <a class="text-danger" href="{{ post.get_previous_post.get_absolute_url }}">
                                                 <i class="fas fa-chevron-left"></i>
                                                 Previous Article
                                             </a>
                                         </div>
                                         <div class="content">
                                             <h4 class="title">
-                                                <a href="{{ post.get_previous_post.get_absolute_url }}">
+                                                <a class="text-primary" href="{{ post.get_previous_post.get_absolute_url }}">
                                                     {{ post.get_previous_post }}
                                                 </a>
                                             </h4>
@@ -217,14 +217,14 @@
                                 <div class="col-lg-6">
                                     <div class="next-prev-wrap next-wrap">
                                         <div class="item-icon">
-                                            <a href="{{ post.get_next_post.get_absolute_url }}">
+                                            <a class="text-danger" href="{{ post.get_next_post.get_absolute_url }}">
                                                 Next Article
                                                 <i class="fas fa-chevron-right"></i>
                                             </a>
                                         </div>
                                         <div class="content">
                                             <h4 class="title">
-                                                <a href="{{ post.get_next_post.get_absolute_url }}">
+                                                <a class="text-primary" href="{{ post.get_next_post.get_absolute_url }}">
                                                     {{ post.get_next_post }}
                                                 </a>
                                             </h4>

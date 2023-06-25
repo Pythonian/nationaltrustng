@@ -24,7 +24,7 @@ urlpatterns = [
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    
+
 admin.site.site_header = 'National Trust CMS'
 admin.site.index_title = 'Admin Dashboard'
 admin.site.site_title = 'National Trust Administration'
