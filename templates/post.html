@@ -145,6 +145,7 @@
 
                         <figure class="post-img">
                             <img src="{% if post.image %}{{ post.image.url }}{% elif post.image_link %}{{ post.image_link }}{% else %}{% static 'img/post.png' %}{% endif %}" alt="{{ post.title }}" width="960" height="520">
+                            <figcaption class="text-body-secondary text-center mt-2">{{ post.image_caption }}</figcaption>
                         </figure>
 
                         <div class="post-body">

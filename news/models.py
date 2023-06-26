@@ -6,14 +6,10 @@ from imagekit.models import ImageSpecField
 from pilkit.processors import ResizeToFill
 from ckeditor_uploader.fields import RichTextUploadingField
 from django.utils.html import strip_tags
-from django.core.validators import MinLengthValidator
 from django.utils.translation import gettext_lazy as _
 from django.contrib.sitemaps import ping_google
 from taggit.managers import TaggableManager
 from .utils import get_read_time
-
-content_validator = MinLengthValidator(
-    limit_value=300, message="Content should be at least 300 characters long!")
 
 
 class Category(models.Model):
@@ -44,7 +40,7 @@ class Post(models.Model):
                                  on_delete=models.PROTECT,
                                  verbose_name=_('category'),
                                  related_name='posts')
-    body = RichTextUploadingField(_('body'), validators=[content_validator])
+    body = RichTextUploadingField(_('body'), blank=True, null=True)
     image = models.ImageField(upload_to='posts_images',
                               verbose_name=_('image'),
                               blank=True, null=True)
