@@ -77,6 +77,12 @@
                                     <li>
                                         <span class="rt-meta" style="color:#f7679d">
                                             <i class="far fa-clock icon"></i>
+                                            {{ post.created|date:"h:i a" }}
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="rt-meta" style="color:#f7679d">
+                                            <i class="fas fa-book-open icon"></i>
                                             {{ post.read_time }} minute{{ post.read_time|pluralize }} read
                                         </span>
                                     </li>

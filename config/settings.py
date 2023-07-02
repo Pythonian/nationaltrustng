@@ -146,6 +146,34 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'width': 'auto',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'],
+            ['NumberedList', 'BulletedList', 'Blockquote', '-', 'JustifyLeft', 'JustifyCenter'],
+            ['Link', 'Unlink'],
+            ['Image', 'Smiley', 'SpecialChar', 'RemoveFormat', 'Source'],
+            ['TextColor', 'Styles', 'Format']
+        ]
+    },
+    'extraPlugins': ','.join([
+        'uploadimage',
+        'autolink',
+        'autoembed',
+        'embedsemantic',
+        'autogrow',
+        'widget',
+        'lineutils',
+        'clipboard',
+        'dialog',
+        'dialogui',
+        'elementspath'
+    ]),
+}
+
 APPEND_SLASH = True
 
 MESSAGE_TAGS = {
