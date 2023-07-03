@@ -25,8 +25,9 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 
     'news.apps.NewsConfig',
-    
+
     'ckeditor',
+    'ckeditor_uploader',
     'imagekit',
     'django_cleanup.apps.CleanupConfig',
     'storages',
@@ -239,3 +240,6 @@ if not DEBUG:
         # django.contrib.auth) you may enable sending PII data.
         send_default_pii=True
     )
+
+CKEDITOR_IMAGE_BACKEND = 'ckeditor_uploader.backends.PillowBackend'
+CKEDITOR_FORCE_JPEG_COMPRESSION = True
