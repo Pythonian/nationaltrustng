@@ -18,7 +18,7 @@
                         <ul>
                             <li>
                                 <span class="rt-meta">
-                                    By National Trust
+                                    By {% if post.author.get_full_name %}{{ post.author.get_full_name }}{% else %}National Trust{% endif %}
                                 </span>
                             </li>
                             <li>

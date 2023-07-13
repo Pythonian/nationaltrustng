@@ -65,7 +65,7 @@
                                 <ul>
                                     <li>
                                         <span class="rt-meta" style="color:#f7679d">
-                                            by National Trust
+                                            by {% if post.author.get_full_name %}{{ post.author.get_full_name }}{% else %}National Trust{% endif %}
                                         </span>
                                     </li>
                                     <li>
@@ -248,7 +248,9 @@
                         {% endif %}
 
                         <div class="blog-post-comment mb-4">
-                            <form method="post" action="." class="comments-form-style-1">
+                            <form method="post" action="." class="comments-form-style-1" style="background-color: #c2bcbc;">
+                                <h3 class="fw-bold">Leave a reply</h3>
+                                <p>Your email address will not be published. Required fields are marked *</p>
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="col-lg-6">

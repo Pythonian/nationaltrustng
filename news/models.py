@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
@@ -26,7 +27,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.title
-    
+   
     def get_absolute_url(self):
         return reverse('news:category', args=[self.slug])
 
@@ -35,6 +36,7 @@ class Post(models.Model):
     title = models.CharField(_('title'), max_length=250)
     slug = models.SlugField(_('slug'), max_length=250,
                             unique_for_date='created')
+    author = models.ForeignKey(User, on_delete=models.PROTECT)
     category = models.ForeignKey(Category,
                                  null=True,
                                  on_delete=models.PROTECT,
